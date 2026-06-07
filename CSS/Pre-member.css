@@ -1,0 +1,366 @@
+/* ===== Noctra Base Reset ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+}
+
+body {
+    font-family:
+        "Noto Sans TC",
+        "Segoe UI",
+        sans-serif;
+}
+
+/* 共用導覽列大小、間距設定 */
+:root {
+    --header-height: 72px;
+    --header-bg: rgba(11, 18, 36, 0.98);
+    --header-text: rgba(255, 255, 255, 0.85);
+    --header-text-hover: #ffffff;
+
+    --nav-gap: 32px;
+    --btn-gap: 25px;
+}
+
+/* ===== Top Bar ===== */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 16px;
+    z-index: 9999;
+
+    transition: background-color .2s ease, box-shadow .2s ease;
+}
+
+/* style1:透明式背景（首頁/Roadmap共用） */
+.top-bar--transparent {
+    background: transparent;
+}
+
+/* style:2固定深色背景（tutor/course共用） */
+.top-bar--solid {
+    background: var(--header-bg);
+}
+
+/* 下拉後背景色改變 */
+.top-bar.is-solid {
+    background: var(--header-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+}
+
+.nav-wrap {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ===== Logo ===== */
+.logo {
+    height: 42px;
+    width: auto;
+    display: block;
+}
+
+/* ===== Nav ===== */
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: var(--nav-gap);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--header-text);
+    cursor: pointer;
+
+    transition: color .18s ease, transform .23s ease;
+}
+
+nav ul li:hover {
+    color: var(--header-text-hover);
+    transform: translateY(-3px);
+}
+
+nav ul li:active {
+    transform: translateY(0);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+/* ===== 導覽列右側會員按鈕 ===== */
+.member-buttons {
+    display: flex;
+    align-items: center;
+    gap: var(--btn-gap);
+}
+
+.member-buttons a {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 999px;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition: background-color .18s ease, border-color .18s ease, transform .14s ease;
+}
+
+/* login */
+#logIn {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: rgba(255, 255, 255, 0.86);
+}
+
+#logIn:hover {
+    background: rgba(224, 231, 255, 0.10);
+    transform: translateY(-1px);
+}
+
+/* signup */
+#signUp {
+    background: #B4C1D4;
+    color: #0b1224;
+}
+
+#signUp:hover {
+    background: #c3cee0;
+    transform: translateY(-1px);
+}
+
+.member-buttons a:active {
+    transform: translateY(0);
+}
+
+/* link reset */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.courseCards .cardTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #243247;
+    padding: 0 18px;
+    margin: 0 0 8px;
+    line-height: 1.35;
+    min-height: 54px;
+
+    text-align: left;
+}
+
+
+/* 頁尾footer */
+footer {
+    width: 100%;
+    background: #0b1224;
+    /* 與header對齊背景顏色 */
+    color: #e5e7eb;
+    padding: 60px 0 30px;
+}
+
+.footerDiv {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.footerLogo {
+    width: 200px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer-slogan {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(229, 231, 235, 0.9);
+}
+
+.footerLinks p,
+.footerContact p {
+    margin: 0 0 18px;
+    font-size: 25px;
+    letter-spacing: 0.02em;
+    color: rgba(229, 231, 235, 1);
+}
+
+/* footer區塊分頁連結 */
+.footerLinks a {
+    display: block;
+    text-decoration: none;
+    color: rgba(229, 231, 235, 0.70);
+    margin: 10px 0;
+    font-size: 20px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footerLinks a:hover {
+    color: #e0e7ff;
+    transform: translateX(4px);
+}
+
+/* 聯絡資訊 */
+.footerContact a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgba(229, 231, 235, 0.70);
+    font-size: 20px;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+}
+
+.footerContact a:hover {
+    color: #e0e7ff;
+}
+
+.footerNote small {
+    margin: 10px 0 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(229, 231, 235, 0.8);
+}
+
+/* footer底線 */
+.footerBottom {
+    width: min(1100px, 92vw);
+    margin: 34px auto 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(229, 231, 235, 0.14);
+    text-align: center;
+}
+
+.footerBottom small {
+    font-size: 16px;
+    color: rgba(229, 231, 235, 0.8);
+}
+
+/* ===== Responsive ===== */
+/* ===== 共用header與footer的RWD調整 ===== */
+@media (max-width: 1280px) {
+
+    /* header setting */
+    .logo {
+        width: 170px;
+    }
+
+    nav ul {
+        gap: 22px;
+    }
+
+    header nav ul li {
+        font-size: 18px;
+    }
+
+    .member-buttons {
+        gap: 16px;
+    }
+
+    .member-buttons a {
+        font-size: 18px;
+        padding: 9px 18px;
+    }
+
+}
+
+
+@media (max-width: 1100px) {
+    .top-bar {
+        gap: 20px;
+    }
+
+    .nav-wrap {
+        gap: 18px;
+    }
+
+    nav ul {
+        gap: 16px;
+    }
+
+    header nav ul li {
+        font-size: 16px;
+    }
+
+    .member-buttons a {
+        font-size: 16px;
+        padding: 8px 14px;
+    }
+
+
+
+
+}
+
+@media (max-width: 860px) {
+
+    /* footer setting */
+    .footerDiv {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .footerBottom {
+        text-align: left;
+    }
+}
