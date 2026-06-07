@@ -10,7 +10,7 @@ const logoutLink = document.getElementById("logout");
 logoutLink.addEventListener('click', () => {
     localStorage.removeItem("currentNoctraUser"); //清除目前登入者js紀錄
 
-    window.location.href = "../index.html"; //跳轉回訪客介面首頁
+    window.location.href = "index.html"; //跳轉回訪客介面首頁
 });
 
 const header = document.getElementById("header");

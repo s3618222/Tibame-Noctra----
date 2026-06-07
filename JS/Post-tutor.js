@@ -2,7 +2,7 @@ const currentNoctraUser = JSON.parse(localStorage.getItem("currentNoctraUser"));
 
 //未登入下的防呆機制，跳轉回登入頁面
 if (!currentNoctraUser) {
-    window.location.href = "../SignIn.html";
+    window.location.href = "SignIn.html";
 };
 
 //登出帳號
@@ -10,7 +10,7 @@ const logoutLink = document.getElementById("logout");
 logoutLink.addEventListener('click', () => {
     localStorage.removeItem("currentNoctraUser"); //清除目前登入者js紀錄
 
-    window.location.href = "../index.html"; //跳轉回訪客介面首頁
+    window.location.href = "index.html"; //跳轉回訪客介面首頁
 });
 
 const header = document.getElementById("header");
@@ -187,7 +187,7 @@ const tutors = [
 
         headIcon: "https://raw.githubusercontent.com/s3618222/Noctra_Assets/refs/heads/main/indieTutorPage/tutor1_Icon_Emily%20Chen.png",
 
-        url: "../Post-totur-Emily.html"
+        url: "Post-totur-Emily.html"
     },
     {
         id: "tutor-02",

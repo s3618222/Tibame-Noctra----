@@ -2,7 +2,7 @@ const currentNoctraUser = JSON.parse(localStorage.getItem("currentNoctraUser"));
 
 //未登入下的防呆機制，跳轉回登入頁面
 if (!currentNoctraUser) {
-    window.location.href = "../SignIn.html";
+    window.location.href = "SignIn.html";
 };
 
 //登出帳號
@@ -10,7 +10,7 @@ const logoutLink = document.getElementById("logout");
 logoutLink.addEventListener('click', () => {
     localStorage.removeItem("currentNoctraUser"); //清除目前登入者js紀錄
 
-    window.location.href = "../index.html"; //跳轉回訪客介面首頁
+    window.location.href = "index.html"; //跳轉回訪客介面首頁
 });
 
 // 載入youtube API

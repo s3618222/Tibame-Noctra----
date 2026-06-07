@@ -2,7 +2,7 @@ const currentNoctraUser = JSON.parse(localStorage.getItem("currentNoctraUser"));
 
 //未登入下的防呆機制，跳轉回登入頁面
 if (!currentNoctraUser) {
-    window.location.href = "../SignIn.html";
+    window.location.href = "SignIn.html";
 };
 
 //登出帳號
@@ -10,7 +10,7 @@ const logoutLink = document.getElementById("logout");
 logoutLink.addEventListener('click', () => {
     localStorage.removeItem("currentNoctraUser"); //清除目前登入者js紀錄
 
-    window.location.href = "../index.html"; //跳轉回訪客介面首頁
+    window.location.href = "index.html"; //跳轉回訪客介面首頁
 });
 
 const header = document.getElementById("header");
@@ -64,7 +64,7 @@ const courses = [
         intro: "學會基本自我介紹與寒暄，建立用英文開口的第一步。",
         level: "A1",
         progress: getCompletedCourse("a1_1"),
-        url: "../A1_1_course.html"
+        url: "A1_1_course.html"
     },
     {
         id: "a1_2",
@@ -100,7 +100,7 @@ const courses = [
         intro: "在會議與討論中，清楚表達意見與想法。",
         level: "B1",
         progress: getCompletedCourse("b1_1"),
-        url: "../B1_1_course.html"
+        url: "B1_1_course.html"
     },
     {
         id: "b1_2",
@@ -109,7 +109,7 @@ const courses = [
         intro: "處理日常職場溝通，並完成簡單的英文簡報。",
         level: "B1",
         progress: getCompletedCourse("b1_2"),
-        url: "../B1_2_course.html"
+        url: "B1_2_course.html"
     },
     {
         id: "b2_1",
@@ -136,7 +136,7 @@ const courses = [
         intro: "在專業場合中進行策略性討論與觀點辯證。",
         level: "C1",
         progress: getCompletedCourse("c1_1"),
-        url: "../C1_1_course.html"
+        url: "C1_1_course.html"
     },
     {
         id: "c1_2",

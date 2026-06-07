@@ -70,5 +70,5 @@ signInBtn.addEventListener("click", () => {
     );
 
     //接著跳轉至學習中心首頁
-    window.location.href = "../Post-learningCenter.html";
+    window.location.href = "Post-learningCenter.html";
 });
