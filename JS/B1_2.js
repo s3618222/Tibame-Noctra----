@@ -8,7 +8,7 @@ if (!currentNoctraUser) {
 //登出帳號
 const logoutLink = document.getElementById("logout");
 logoutLink.addEventListener('click', () => {
-    localStorage.removeItem("currentNoctraUser"); //清除目前登入者js紀錄
+    localStorage.removeItem("currentNoctraUser"); //清除目前登入者js紀錄 
 
     window.location.href = "index.html"; //跳轉回訪客介面首頁
 });
@@ -19,6 +19,8 @@ tag.src = "https://www.youtube.com/iframe_api";
 document.body.appendChild(tag);
 
 let player;
+let hasStartedCourse = false; //防呆機制，確保使用者真的按下觀看影片
+
 function onYouTubeIframeAPIReady() {
     player = new YT.Player("courseIframe", {
         events: {
@@ -31,9 +33,11 @@ function onYouTubeIframeAPIReady() {
 
 //紀錄正在撥放的課程影片進度函式
 function onPlayerReady() {
-    resumeVideo();
 
     setInterval(() => {
+        // 防呆，如果課程還沒開始，就不做紀錄動作
+        if (!hasStartedCourse) return;
+
         if (player && player.getCurrentTime) {
             const currentTime = player.getCurrentTime(); //取得影片進度
             const durationTime = player.getDuration(); //取得影片總時長
@@ -124,6 +128,8 @@ const progress = `course_${courseInfo.id}_progress`; // 供查看課程播放進
 
 //播放影片按紐
 startClassBtn.addEventListener("click", () => {
+    hasStartedCourse = true; // 按下觀看按鈕，切換狀態，以便resumeVideo函式能運行
+
     classPreview.style.display = "none";
     videoPlayer.style.display = "flex";
 
@@ -344,6 +350,8 @@ function resetTest() {
 
 //重新觀課按鈕
 reWatchBtn.addEventListener("click", () => {
+    hasStartedCourse = true;
+
     videoPlayer.style.display = "block";
     classComplete.style.display = "none";
 

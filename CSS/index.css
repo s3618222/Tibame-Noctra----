@@ -50,6 +50,7 @@ body {
 }
 
 .hero-content {
+    text-align: center;
     position: relative;
     z-index: 2;
     /* 設定比 ::before 的1高，防止被遮罩擋住 */
@@ -58,9 +59,16 @@ body {
 /* Hero Section slogan文字 */
 h1,
 .hero-content p {
-    font-size: 30px;
     color: rgba(229, 231, 235, 0.92);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+    font-size: 32px;
+}
+
+.hero-content p {
+    font-size: 26px;
 }
 
 /* Hero Section CTA帳號註冊按鈕 */
@@ -178,7 +186,7 @@ h1,
 }
 
 .method-intro p {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .method-intro .landing-CTA-btn {
@@ -210,8 +218,8 @@ h1,
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 /* courses介紹 */
@@ -232,7 +240,7 @@ h1,
 }
 
 .course-intro p {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .course-intro .landing-CTA-btn {
@@ -264,8 +272,8 @@ h1,
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 /* tutor介紹 */
@@ -286,7 +294,7 @@ h1,
 }
 
 .tutor-intro p {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .tutor-intro .landing-CTA-btn {
@@ -379,7 +387,7 @@ h1,
 }
 
 .progress-intro p {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .progress-intro .landing-CTA-btn {
@@ -411,8 +419,8 @@ h1,
 }
 
 .progressContent {
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 /* 學員心得感想 */
@@ -643,7 +651,7 @@ h1,
 }
 
 .recruit-intro p {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.5;
     padding-bottom: 5px;
 }
@@ -724,7 +732,6 @@ h1,
 
 /* Responsive */
 /* ===== Desktop / Laptop Responsive ===== */
-
 @media (max-width: 1280px) {
     .logo {
         width: 170px;
@@ -747,6 +754,14 @@ h1,
         padding: 9px 18px;
     }
 
+    h1 {
+        font-size: 30px;
+    }
+
+    .hero-content p {
+        font-size: 24px;
+    }
+
     .method-intro h2,
     .course-intro h2,
     .tutor-intro h2,
@@ -754,7 +769,34 @@ h1,
     .feedback-intro h2,
     .subscribe-intro h2,
     .recruit-intro h2 {
-        font-size: 28px;
+        font-size: 26px;
+    }
+
+    .method-intro p,
+    .course-intro p,
+    .tutor-intro p,
+    .progress-intro p,
+    .feedback-intro p,
+    .subscribe-intro p,
+    .recruit-intro p {
+        font-size: 18px;
+    }
+
+    .methodImgFrame p,
+    .courseImgFrame p,
+    .progressContent {
+        font-size: 18px;
+    }
+
+    .studentFeedback,
+    .studentSituation {
+        font-size: 16px;
+    }
+
+    .landing-CTA-btn,
+    .subscribe-btn,
+    #recruit-btn {
+        font-size: 18px;
     }
 
     .method-intro img,
@@ -783,9 +825,6 @@ h1,
         width: 380px;
     }
 
-    .progressContent {
-        font-size: 18px;
-    }
 
     .feedbackDiv {
         gap: 60px;
@@ -829,11 +868,6 @@ h1,
         padding: 8px 14px;
     }
 
-    h1,
-    .hero-content p {
-        font-size: 26px;
-    }
-
     .feature-bar {
         padding: 0 24px;
         gap: 24px;
@@ -863,10 +897,6 @@ h1,
         width: 280px;
     }
 
-    .tutor-info p {
-        font-size: 18px;
-    }
-
     .progressContainer {
         width: min(900px, 92vw);
     }
@@ -882,10 +912,6 @@ h1,
     .progressDiv div:nth-child(2) img {
         width: 350px;
         transform: rotate(-10deg);
-    }
-
-    .progressContent {
-        font-size: 18px;
     }
 
     .feedbackDiv {

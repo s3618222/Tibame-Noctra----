@@ -19,6 +19,8 @@ tag.src = "https://www.youtube.com/iframe_api";
 document.body.appendChild(tag);
 
 let player;
+let hasStartedCourse = false; //防呆機制，確保使用者真的按下觀看影片
+
 function onYouTubeIframeAPIReady() {
     player = new YT.Player("courseIframe", {
         events: {
@@ -31,9 +33,12 @@ function onYouTubeIframeAPIReady() {
 
 //紀錄正在撥放的課程影片進度函式
 function onPlayerReady() {
-    resumeVideo();
+    // resumeVideo(); → 之前會導致一進頁面，還沒點觀看按鈕就自己跑了。 記得之後要避免!
 
     setInterval(() => {
+        // 防呆，如果課程還沒開始，就不做紀錄動作
+        if (!hasStartedCourse) return;
+
         if (player && player.getCurrentTime) {
             const currentTime = player.getCurrentTime(); //取得影片進度
             const durationTime = player.getDuration(); //取得影片總時長
@@ -124,6 +129,8 @@ const progress = `course_${courseInfo.id}_progress`; // 供查看課程播放進
 
 //播放影片按紐
 startClassBtn.addEventListener("click", () => {
+    hasStartedCourse = true; // 按下觀看按鈕，切換狀態，以便resumeVideo函式能運行
+
     classPreview.style.display = "none";
     videoPlayer.style.display = "flex";
 
@@ -344,6 +351,8 @@ function resetTest() {
 
 //重新觀課按鈕
 reWatchBtn.addEventListener("click", () => {
+    hasStartedCourse = true;
+
     videoPlayer.style.display = "block";
     classComplete.style.display = "none";
 
