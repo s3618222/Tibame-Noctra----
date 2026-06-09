@@ -78,6 +78,11 @@ const remainingQuota = document.getElementById("remainingQuota"); //表單顯示
 const makeRequestBtn = document.getElementById("makeRequestBtn"); //預約申請按鈕
 const cancelBtn = document.getElementById("cancelBtn"); //取消申請按鈕
 
+const lessonDate = document.getElementById('lessonDate');
+const lessonTime = document.getElementById('lessonTime');
+const needNote = document.getElementById('needNote');
+const formTutorName = document.getElementById('formTutorName');
+
 tutorPhoto.src = tutor.photo;
 tutorPhoto.alt = "tutor profile photo";
 
@@ -132,8 +137,9 @@ function buttonStatus() {
         makeRequestBtn.disabled = true;
         cancelBtn.style.display = "block"; //顯示取消預約按鈕
 
-        //已預約過，就鎖住表單，讓時段偏好下拉選單跟需求註記區塊不能編輯
-        timePreference.disabled = true;
+        //已預約過，就鎖住表單，讓日期、時段跟需求註記區塊不能編輯
+        lessonDate.disabled = true;
+        lessonTime.disabled = true;
         needNote.readOnly = true;
         //相比disabled會讓區塊完全不能操作與通常變灰，readOnly則是讓使用者還是能選取文字，但不能修改
 
@@ -143,7 +149,8 @@ function buttonStatus() {
         cancelBtn.style.display = "none";
 
         //表單內容恢復可編輯
-        timePreference.disabled = false;
+        lessonDate.disabled = false;
+        lessonTime.disabled = false;
         needNote.readOnly = false;
     };
 }
@@ -163,6 +170,12 @@ makeRequestBtn.addEventListener("click", () => {
 
     if (hasPendingRequest) {
         return; //防呆機制：如果已經有送出預約，且還未確認完畢的資料，就跳回
+    }
+
+    //防呆，確保預約日期與時段都有填寫
+    if (!lessonDate.value || !lessonTime.value) {
+        alert("請選擇希望上課日期與時間");
+        return;
     }
 
     //預約剩餘次數是否足夠判斷
@@ -201,7 +214,8 @@ makeRequestBtn.addEventListener("click", () => {
         tutorName: formTutorName.textContent, //抓取表單中的教師姓名
 
         requestDate: requestDate, //抓取預約申請日期
-        preferredTime: timePreference.value, //抓取選擇的偏好時段
+        lessonDate: lessonDate.value, //抓取選擇的希望日期
+        lessonTime: lessonTime.value, //抓取選擇的希望時段
         note: needNote.value, //抓取備註內容
 
         status: "pending",
@@ -290,8 +304,9 @@ function fillRequestForm() {
         return;
     }
 
-    timePreference.value = latestRequest.preferredTime; //回填偏好時段
-    needNote.value = latestRequest.note; //回填需求備註
+    lessonDate.value = latestRequest.lessonDate || '';
+    lessonTime.value = latestRequest.lessonTime || "09:00";
+    needNote.value = latestRequest.note || ''; //回填需求備註
 }
 
 fillRequestForm(); //初始畫面時，就先跑一次，回填表格資料

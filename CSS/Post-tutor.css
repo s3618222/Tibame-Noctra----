@@ -618,7 +618,8 @@ h1 {
     color: #334155;
 }
 
-.requestDetails select {
+.requestDetails select,
+.requestDetails input {
     width: 50%;
     font-size: 16px;
     padding: 10px 15px;
@@ -633,13 +634,15 @@ h1 {
     transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
 }
 
-.requestDetails select:focus {
+.requestDetails select:focus,
+.requestDetails input {
     border-color: rgba(180, 193, 212, 0.95);
     box-shadow: 0 0 0 4px rgba(180, 193, 212, 0.22);
     background: #ffffff;
 }
 
-/* 時段偏好欄位 */
+/* 日期與時段偏好欄位 */
+.dateChoice,
 .timeChoice {
     display: flex;
     flex-direction: column;

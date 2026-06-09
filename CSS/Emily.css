@@ -154,6 +154,7 @@
     color: #334155;
 }
 
+.requestDetails input,
 .requestDetails select {
     width: 50%;
     font-size: 15px;
@@ -169,6 +170,7 @@
     transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
 }
 
+.requestDetails input:focus,
 .requestDetails select:focus {
     border-color: rgba(180, 193, 212, 0.95);
     box-shadow: 0 0 0 4px rgba(180, 193, 212, 0.22);
@@ -186,7 +188,8 @@
     font-weight: 700;
 }
 
-/* 時段偏好欄位 */
+/* 日期與時段偏好欄位 */
+.dateChoice,
 .timeChoice {
     display: flex;
     flex-direction: column;
@@ -384,7 +387,7 @@ textarea[readonly] {
 
 .introDiv p {
     white-space: pre-line;
-    text-indent:2em each-line;
+    text-indent: 2em each-line;
     font-size: 18px;
     line-height: 1.5;
     color: #4b453f;

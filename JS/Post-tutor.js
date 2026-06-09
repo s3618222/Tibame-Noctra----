@@ -639,7 +639,8 @@ const formTutorName = document.getElementById("formTutorName"); //預約表單�
 const cancelBtn = document.getElementById("cancelBtn"); //預約取消按鈕
 const makeRequestBtn = document.getElementById("makeRequestBtn"); //確認預約按鈕
 
-const timePreference = document.getElementById("timePreference"); //表單中的時段偏好區
+const lessonDate = document.getElementById("lessonDate"); //表單中的希望日期
+const lessonTime = document.getElementById("lessonTime"); //表單中的希望時段
 const needNote = document.getElementById("needNote"); //表單中的需求備註區
 
 //打開、建立預約表單函式
@@ -681,7 +682,8 @@ tutorContainer.addEventListener("click", (e) => {
 
 //預約表單取消按鈕
 cancelBtn.addEventListener("click", () => {
-    timePreference.value = "平日早上";
+    lessonDate.value = "";
+    lessonTime.value = "09:00";
     needNote.value = "";
     //初始化、清空原先的欄位資訊，避免開啟新表單時，舊有填寫的資料還在上面
 
@@ -729,6 +731,12 @@ makeRequestBtn.addEventListener("click", () => {
         return; //防呆機制：如果已經有送出預約，且還未確認完畢的資料，就跳回
     }
 
+    //防呆，確保預約日期與時段都有填寫
+    if (!lessonDate.value || !lessonTime.value) {
+        alert("請選擇希望上課日期與時間");
+        return;
+    }
+
     //預約剩餘次數是否足夠判斷
     if (remainingQuota <= 0) {
         alert("目前預約次數已滿");
@@ -764,8 +772,9 @@ makeRequestBtn.addEventListener("click", () => {
         tutorId: currentTutorId,
         tutorName: formTutorName.textContent, //抓取表單中的教師姓名
 
-        requestDate: requestDate, //抓取預約申請日期
-        preferredTime: timePreference.value, //抓取選擇的偏好時段
+        requestDate: requestDate, //抓取預約申請送出日期
+        lessonDate: lessonDate.value, //抓取選擇的希望日期
+        lessonTime: lessonTime.value, //抓取選擇的希望時段
         note: needNote.value, //抓取備註內容
 
         status: "pending",
@@ -835,7 +844,7 @@ function renderRequestList() {
       <div class="recentRequestBox">
         <p class="requestDate">${request.requestDate}</p>
         <p>教師：<span class="requestTutorName">${request.tutorName}</span></p>
-        <p>上課偏好時段：<span class="requestPreferredTime">${request.preferredTime}</span></p>
+        <p>希望上課時間：<span class="requestPreferredTime">${request.lessonDate} ${request.lessonTime}</span></p>
         <p>備註：<span class="requestNote">${request.note || "—"}</span></p>
         <p class="statusRow">預約進度：<span class="requestStatus ${request.status}">${statusText}</span></p>
         ${cancelButtonHTML}
