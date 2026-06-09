@@ -233,7 +233,7 @@
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 28px;
     color: #243247;
     letter-spacing: 1px;
     margin-bottom: 28px;
@@ -294,7 +294,7 @@ h2 {
 
 .ongoingCourse h2,
 .completedCourse h2 {
-    font-size: 20px;
+    font-size: 28px;
     color: #243247;
     letter-spacing: 1px;
 
@@ -604,7 +604,7 @@ h2 {
 }
 
 .achievements h2 {
-    font-size: 24px;
+    font-size: 28px;
     color: #243247;
     letter-spacing: 1px;
     margin-bottom: 50px;
