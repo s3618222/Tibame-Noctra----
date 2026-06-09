@@ -1,4 +1,71 @@
 /* ===== Noctra Design Starts ===== */
+
+/* 一首頁loading動畫 */
+#pageContent {
+    opacity: 0;
+    transition: opacity .5s ease-in
+}
+
+.animeContainer {
+    width: 100%;
+    height: 100dvh;
+    background-color: #ebe7df;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    inset: 0;
+    /* 讓動畫畫面覆蓋整個頁面  */
+    z-index: 9999;
+
+    transition: opacity 0.8s ease;
+}
+
+#lettersPanel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    /* 讓字母之間可以靠近一點 */
+
+    font-size: 10vw;
+    font-weight: 1000;
+    color: #ebe7df;
+    -webkit-text-stroke: 0.03vw rgba(11, 18, 36, 0.98);
+}
+
+.letters {
+    transition: color 1.2s ease-in-out;
+}
+
+.sloganPanel {
+    width: fit-content;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.animeSlogan {
+    display: block;
+    font-size: 2.5vw;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #4b5563;
+    opacity: 0;
+
+    transition: opacity 1.5s ease-in-out;
+}
+
+.letters.loading {
+    color: rgba(11, 18, 36, 0.98);
+}
+
+.animeSlogan.show {
+    opacity: 1;
+}
+
 body {
     background-color: #f5f6f4;
     /* 吃掉多出來的空白白色區塊 */
