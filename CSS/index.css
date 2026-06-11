@@ -540,9 +540,8 @@ h1 {
     flex-direction: column-reverse;
 }
 
-/* 預設第二和第三張學員段落比較暗 */
-.feedbackFrame2,
-.feedbackFrame3 {
+/* 讓三位學員卡片的起始狀態變暗，製造出hover後的落差 */
+.feedbackImgFrame {
     filter: brightness(.70) contrast(1.02) saturate(.92);
     opacity: 0.5;
 }
