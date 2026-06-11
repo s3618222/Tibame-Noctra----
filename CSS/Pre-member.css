@@ -60,6 +60,12 @@ body {
 }
 
 /* ===== Top Bar ===== */
+
+/* 先隱藏起來手機漢堡選單的登入/註冊按鈕 */
+.mobile-auth {
+    display: none;
+}
+
 .top-bar {
     position: fixed;
     top: 0;
@@ -120,7 +126,7 @@ nav ul li {
     font-size: 18px;
     letter-spacing: 1px;
     color: var(--header-text);
-    cursor: pointer;
+    cursor: default;
 
     transition: color .18s ease, transform .23s ease;
 }
@@ -137,6 +143,7 @@ nav ul li:active {
 nav ul li a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 
 /* hb的隱藏感應按鈕 */
@@ -357,9 +364,6 @@ footer {
         padding: 8px 14px;
     }
 
-
-
-
 }
 
 @media (max-width: 860px) {
@@ -484,7 +488,7 @@ footer {
 
     .nav-wrap nav ul li a {
         display: block;
-        width: fit-content;
+        width: 28%;
         height: fit-content;
         margin-inline: auto;
         padding: 10px 25px;
@@ -493,12 +497,64 @@ footer {
 
     .nav-wrap nav ul li:hover {
         transform: none;
-        /* 取消掉桌機時，原先有設定的上升位移效果 */
+        /* 取消掉原先桌機設定的上升位移效果 */
     }
 
-    .nav-wrap nav ul li:hover a {
+    .nav-wrap nav ul li:not(.mobile-auth) a:hover {
         background-color: rgba(180, 193, 212, 0.16);
         color: #ffffff;
     }
+
+    .mobile-auth-login a:hover {
+        background: rgba(224, 231, 255, 0.10);
+        color: rgba(255, 255, 255, 0.86);
+    }
+
+    .mobile-auth-signup a:hover {
+        background: #c3cee0;
+        color: #0b1224;
+
+    }
+}
+
+
+/*   避免原先置頂列的會員按鈕擠壓logo，將其隱藏 */
+@media screen and (max-width: 600px) {
+
+    .member-buttons>#logIn,
+    .member-buttons>#signUp {
+        display: none;
+    }
+
+    .top-bar {
+        padding-inline: 18px;
+    }
+
+    .logo {
+        max-width: 170px;
+        height: auto;
+    }
+
+    /* 改用原先藏在nav裡備用的手機組按鈕 */
+    .mobile-auth {
+        display: block;
+    }
+
+    .mobile-auth a {
+        width: min(220px, 80vw);
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .mobile-auth-login a {
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .mobile-auth-signup a {
+        background: #B4C1D4;
+        color: #0b1224;
+    }
+
 
 }
