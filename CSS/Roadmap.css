@@ -10,9 +10,9 @@
     --hero-bg: #efe7d7;
     --hero-bg-2: #e3d6bf;
     --hero-ink: #111827;
-    --hero-muted: rgba(17, 24, 39, .64);
+    --hero-muted: rgba(17, 24, 39, 0.64);
 
-    --bar-solid: rgba(17, 24, 39, .92);
+    --bar-solid: rgba(17, 24, 39, 0.92);
     /* 深墨，不是藍 */
 }
 
@@ -24,17 +24,54 @@ body {
 /* Hero Section區塊 */
 .hero-roadmap {
     width: 100%;
-    min-height: 500px;
     height: 50vh;
-    display: flex;
-    align-items: stretch;
+    min-height: 480px;
+    position: relative;
     overflow: hidden;
 
+    background-color: #0b1224;
+
+    background-size: cover;
+    background-position: center 20%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+}
+
+/* 雙背景圖層重疊，讓圖片出現時可以有漸入漸出效果 */
+.hero-bg-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background-size: cover;
+    background-position: center 20%;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    transition: opacity 420ms ease;
+}
+
+.hero-bg-layer.is-active {
+    opacity: 1;
+}
+
+/* 背景上加些微遮色罩，方便讓置頂列文字突出 */
+.hero-bg-layer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(90deg,
+            rgba(11, 18, 36, 0.35) 0%,
+            rgba(11, 18, 36, 0.1) 45%,
+            rgba(11, 18, 36, 0) 100%);
+}
+
+.hero-content {
     position: relative;
-    background: linear-gradient(180deg,
-            var(--hero-bg),
-            var(--hero-bg-2));
-    /* 給底色，避免銜接區域露出空白!!!!! */
+    z-index: 2;
 }
 
 .hero-content,
@@ -42,131 +79,138 @@ body {
     height: 100%;
 }
 
-/* Hero Sec文字區域 */
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    text-align: center;
-    background: linear-gradient(180deg,
-            var(--hero-bg),
-            var(--hero-bg-2));
-    /* 給底色，避免銜接區域露出空白!!!!! */
-    flex: 0 0 calc(42% + var(--cut));
-    clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% 100%, 0 100%);
-}
-
-
-
-h1 {
-    text-align: left;
-    margin-left: 100px;
-    padding-top: 10%;
-    color: var(--hero-ink);
-    letter-spacing: 0.2px;
-    font-size: 30px;
-}
-
-.imgContent {
-    display: block;
-    line-height: 1.2;
-}
-
-.heroImg-slogan {
-    color: var(--hero-ink);
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0.2px;
-}
-
-.heroImg-sub {
-    color: var(--hero-muted);
-    font-size: 20px;
-}
-
-/* Hero Sec輪播圖區塊 */
-.hero-img {
-    position: relative;
-    flex: 0 0 58%;
-    height: 100%;
-    overflow: hidden;
-    clip-path: polygon(var(--cut) 0, 100% 0, 100% 100%, 0 100%);
-    margin-left: calc((var(--cut) + var(--overlap)) * -1);
-    z-index: 2;
-    pointer-events: none;
-}
-
-/* 讓hero區塊兩張背景圖疊在一起 */
-.hero-img-layer {
-    position: absolute;
-    inset: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 42%;
-    opacity: 0;
-    transition: opacity 320ms ease;
-}
-
-/* 畫面目前顯示的背景底圖設定 */
+/* 顯示中的背景 */
 .hero-img-layer.is-active {
     opacity: 1;
 }
 
-/* 圖片切換按鈕 */
-.change-button {
-    position: absolute;
-    z-index: 10;
-    display: block;
-    font-size: 22px;
+/* Hero Sec文字區域 */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: min(620px, 86vw);
+    height: 100%;
+    margin-inline: auto;
+    padding-top: var(--header-height);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    margin: 0 0 24px;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 32px;
+    line-height: 1.1;
+}
+
+.imgContent {
+    min-height: 110px;
+}
+
+.heroImg-slogan {
+    margin: 0 0 12px;
+
+    color: #fff;
+    font-size: 24px;
     font-weight: 700;
-    letter-spacing: 0.2px;
-    background-color: rgba(15, 23, 42, 0.35);
-    border: 1px solid rgba(229, 231, 235, 0.28);
-    color: rgba(255, 255, 255, 0.92);
-    padding: 12px 18px;
-    white-space: nowrap;
-    border-radius: 999px;
+    line-height: 1.25;
+}
+
+.heroImg-sub {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.82);
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 1.6;
+}
+
+.heroImg-slogan,
+.heroImg-sub {
+    padding-inline: 0;
+}
+
+/* 圖片切換按鈕 */
+.hero-controls {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.change-button {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+
     cursor: pointer;
+    backdrop-filter: blur(4px);
+    box-shadow: none;
 
-    backdrop-filter: blur(10px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-
-    transition: background-color .18s ease, border-color .18s ease, transform .14s ease;
+    transition: background-color 0.18s ease, transform 0.18s ease;
 }
 
 .change-button:hover {
-    background: rgba(15, 23, 42, 0.50);
-    border-color: rgba(224, 231, 255, 0.5);
-    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.16);
+    transform: translateY(-2px);
 }
 
 .change-button:active {
     transform: translateY(0);
 }
 
-#nextImg {
-    /* 下一張圖片 */
-    top: 32%;
-    left: 45%;
+.arrow-icon {
+    width: 26px;
+    height: 26px;
+    display: block;
 }
 
-#previousImg {
-    /* 上一張圖片 */
-    top: 58%;
-    left: 42.5%;
-
-    background-color: rgba(255, 255, 255, 0.25);
-    border: 1px solid rgba(17, 24, 39, .18);
-    color: rgba(17, 24, 39, .85);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+.arrow-icon path {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
-#previousImg:hover {
-    background-color: rgba(255, 255, 255, 0.55);
-    border-color: rgba(17, 24, 39, .28);
+/* 中間點點 */
+.hero-dots {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.72);
+
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-dot.is-active {
+    background: #ffffff;
+    border-color: #ffffff;
 }
 
 /* 課程分級介紹區域 */
@@ -227,11 +271,12 @@ h2 {
     height: calc(120px + var(--level) * 40px);
     /* 設定讓每一階依序越來越高 */
     border-radius: 15px;
-    border: 1px solid rgba(17, 24, 39, .12);
-    background: rgba(255, 255, 255, .60);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
     text-align: center;
-    transition: transform .16s ease, box-shadow .18s ease, border-color .18s ease, background-color .18s ease;
+    transition: transform 0.16s ease, box-shadow 0.18s ease,
+        border-color 0.18s ease, background-color 0.18s ease;
 
     display: flex;
     flex-direction: column;
@@ -243,8 +288,8 @@ h2 {
 .ladderStep:hover {
     transform: translateY(-3px);
     border-color: rgba(31, 42, 68, 0.38);
-    box-shadow: 0 18px 44px rgba(0, 0, 0, .10);
-    background: rgba(255, 255, 255, .72);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.72);
 }
 
 /* 課程分級文字設定 */
@@ -254,8 +299,8 @@ h2 {
 
 .level {
     font-size: 20px;
-    color: rgba(17, 24, 39, .86);
-    letter-spacing: .2px;
+    color: rgba(17, 24, 39, 0.86);
+    letter-spacing: 0.2px;
     text-align: left;
     font-weight: 700;
 
@@ -266,15 +311,15 @@ h2 {
 
 .levelContent.eng {
     font-weight: 700;
-    color: rgba(17, 24, 39, .88);
-    letter-spacing: .15px;
+    color: rgba(17, 24, 39, 0.88);
+    letter-spacing: 0.15px;
 }
 
 .levelContent {
     font-size: 18px;
     line-height: 1.5;
     padding: 0 10px;
-    color: rgba(17, 24, 39, .72);
+    color: rgba(17, 24, 39, 0.72);
 }
 
 .ladderStep:hover .level {
@@ -284,62 +329,21 @@ h2 {
 .ladderStep:hover {
     transform: translateY(-3px);
     border-color: rgba(31, 42, 68, 0.38);
-    box-shadow: 0 18px 42px rgba(0, 0, 0, .12);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12);
 }
 
 .levelRole {
     font-size: 24px;
     font-weight: 700;
-    letter-spacing: .2px;
-    color: rgba(17, 24, 39, .78);
+    letter-spacing: 0.2px;
+    color: rgba(17, 24, 39, 0.78);
 }
 
 .levelBlock hr {
-    background-color: rgba(17, 24, 39, .14);
+    background-color: rgba(17, 24, 39, 0.14);
 }
 
-/* 各階段的對應應用情境圖與說明文字 */
-.stageViewport {
-    margin-top: 100px;
-    padding-top: clamp(60px, 7vw, 100px);
-    padding-bottom: clamp(70px, 7vw, 120px);
-    position: relative;
 
-    min-height: clamp(560px, 48vw, 760px);
-
-    background: #f3f1ec;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    border-top: 1px solid rgba(17, 24, 39, 0.06);
-}
-
-/* 讓三個區塊都佔同一位置 */
-.stageViewport .stageImgs {
-    position: absolute;
-    inset: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(24px);
-    transition: opacity 320ms ease, transform 320ms ease;
-
-    gap: clamp(18px, 2.5vw, 50px);
-
-    width: min(1180px, 76vw);
-    margin: clamp(100px, 10vw, 150px) auto clamp(120px, 12vw, 180px);
-}
-
-/* 顯示中的那張 */
-.stageViewport .stageImgs.is-active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0);
-}
 
 /* 階梯調色 */
 #block1 .ladderStep {
@@ -354,76 +358,120 @@ h2 {
     background: #edeff1;
 }
 
-/* Beginner Stage */
-.stageImgs {
-    width: 100%;
-}
-
-.stageBlock {
+/* 各級情境輪播圖 */
+.stageViewport {
+    padding: clamp(70px, 7vw, 110px) 0;
     position: relative;
+    margin-inline: auto;
+    border-top: 1px solid rgba(17, 24, 39, 0.08);
+    overflow: hidden;
+    background-color: #f3f1ec;
 }
 
-#beginnerContent {
-    width: 100%;
-    color: white;
+.stageWindow {
+    width: min(1180px, 78vw);
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+.stageCarousel {
+    padding: 20px;
+    display: flex;
+    gap: 24px;
+    transition: transform 0.45s ease;
+}
+
+.cards {
+    flex: 0 0 calc((100% - 48px) / 3);
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(31, 42, 68, 0.12);
+
+    transition: transform 0.22s ease, box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.cards:hover {
+    transform: translateY(-6px);
+    border-color: rgba(31, 42, 68, 0.26);
+    box-shadow: 0 28px 64px rgba(11, 18, 36, 0.16);
+}
+
+.stageTags {
     position: absolute;
-    top: 12%;
-    left: 5%;
-}
 
-#beginnerContent hr {
-    width: 90%;
-    margin-left: 0;
-}
+    top: 18px;
+    left: 18px;
 
-#beginnerStage,
-#advancedStage {
-    width: min(700px, 44vw);
-}
+    margin: 0;
 
-.stageUser {
-    width: min(380px, 27vw);
-    height: auto;
-    border-radius: clamp(36px, 5vw, 70px);
-}
+    padding: 8px 14px;
 
-/* Intermediate Stage */
-#intermediateContent {
-    width: 100%;
+    border-radius: 999px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    background: #0b1224;
     color: white;
-    position: absolute;
-    top: 15%;
-    left: 12%;
+    border: white 0.5px solid;
+
+    z-index: 5;
 }
 
-#intermediateContent hr {
-    width: 77%;
-    margin-left: 0;
+/* 不同級別的標籤些微色差 */
+.A1Card .stageTags,
+.A2Card .stageTags {
+    background: #b4c1d4;
+    color: #0b1224;
 }
 
-#intermediateStage {
-    width: min(750px, 46vw);
+.B1Card .stageTags,
+.B2Card .stageTags {
+    background: #314158;
 }
 
-/* Advanced Stage */
-#advancedContent {
+.C1Card .stageTags,
+.C2Card .stageTags {
+    background: #0b1224;
+}
+
+.stageImg {
     width: 100%;
-    color: white;
-    position: absolute;
-    top: 12%;
-    left: 5%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
 }
 
-#advancedContent hr {
-    width: 90%;
-    margin-left: 0;
+.stageImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.45s ease;
 }
 
-#beginnerContent,
-#intermediateContent,
-#advancedContent {
-    font-size: clamp(14px, 1.15vw, 18px);
-    line-height: 1.5;
+.cards:hover .stageImg img {
+    transform: scale(1.07);
+}
+
+.stageText {
+    text-align: left;
+    min-height: 180px;
+    padding: 12px 12px 20px;
+    font-size: 18px;
+    line-height: 1.75;
+    color: rgba(17, 24, 39, 0.74);
+}
+
+.stageText p:last-child {
+    margin-bottom: 0;
+}
+
+.stageWindow .wordWithImg {
+    text-align: center;
 }
 
 /* 區塊切換按鈕 */
@@ -445,16 +493,17 @@ h2 {
     color: rgba(17, 24, 39, 0.82);
 
     backdrop-filter: blur(10px);
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
 
-    transition: transform .14s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
+    transition: transform 0.14s ease, background-color 0.18s ease,
+        border-color 0.18s ease, box-shadow 0.18s ease;
 
     font-size: clamp(18px, 1.6vw, 24px);
     padding: clamp(8px, 0.9vw, 12px) clamp(12px, 1.3vw, 18px);
 }
 
 .stageNavBtn:hover {
-    background: rgba(255, 255, 255, 0.30);
+    background: rgba(255, 255, 255, 0.3);
     border-color: rgba(31, 42, 68, 0.28);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
     transform: translateY(-50%) translateY(-1px);
@@ -465,7 +514,7 @@ h2 {
 }
 
 .stageNavBtn:focus-visible {
-    outline: 3px solid rgba(31, 42, 68, 0.30);
+    outline: 3px solid rgba(31, 42, 68, 0.3);
     outline-offset: 2px;
 }
 
@@ -498,24 +547,6 @@ h2 {
 #nextStage:hover {
     background: rgba(31, 42, 68, 0.25);
     border-color: rgba(31, 42, 68, 0.34);
-}
-
-/* 各層級熱區連結設定 */
-.hotspot {
-    position: absolute;
-    background: transparent;
-    border: 2px solid transparent;
-    border-radius: 12px;
-    cursor: pointer;
-    display: block;
-
-    z-index: 99;
-}
-
-
-.hotspot:hover {
-    border-color: rgba(255, 255, 255, 0.6);
-    background: rgba(255, 255, 255, 0.1);
 }
 
 /* 課程設計邏輯的說明區塊 */
@@ -606,29 +637,12 @@ h2 {
     border-radius: 18px;
 }
 
-/* Responsive */
-@media (max-width: 860px) {
-    .footerDiv {
-        grid-template-columns: 1fr;
-        gap: 28px;
-    }
 
-    .footerBottom {
-        text-align: left;
-    }
-}
 
-/* ===== Roadmap Desktop / Laptop Responsive ===== */
+/* 學習地圖獨立Responsive */
+/* ===== Desktop / Laptop Responsive ===== */
 
-@media (max-width: 1280px) {
-    #nextImg {
-        left: 43.5%;
-    }
-
-    #previousImg {
-        left: 42%;
-    }
-
+@media screen and (max-width: 1280px) {
     .logo {
         width: 170px;
     }
@@ -651,7 +665,6 @@ h2 {
     }
 
     h1 {
-        margin-left: 70px;
         font-size: 28px;
     }
 
@@ -731,26 +744,15 @@ h2 {
     }
 }
 
-@media (max-width: 1100px) {
-    .top-bar {
-        gap: 20px;
+@media screen and (max-width: 1100px) {
+
+    /*   情境輪播塗改顯示2張  */
+    .stageWindow {
+        width: min(900px, 82vw);
     }
 
-    .nav-wrap {
-        gap: 18px;
-    }
-
-    nav ul {
-        gap: 16px;
-    }
-
-    header nav ul li {
-        font-size: 16px;
-    }
-
-    .member-buttons a {
-        font-size: 16px;
-        padding: 8px 14px;
+    .cards {
+        flex: 0 0 calc((100% - 24px) / 2);
     }
 
     .hero-roadmap {
@@ -758,7 +760,6 @@ h2 {
     }
 
     h1 {
-        margin-left: 50px;
         font-size: 28px;
     }
 
@@ -775,14 +776,6 @@ h2 {
     .change-button {
         font-size: 18px;
         padding: 10px 15px;
-    }
-
-    #nextImg {
-        left: 44%;
-    }
-
-    #previousImg {
-        left: 42%;
     }
 
     .classification-ladder {
@@ -845,7 +838,7 @@ h2 {
 
     .classLogic h2,
     .visualIntro h2 {
-        font-size: 32px;
+        font-size: 24px;
     }
 
     .logicPhoto {
@@ -882,5 +875,226 @@ h2 {
 
     .visualImgDiv div p {
         font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    /* 層級階梯圖一上二下調整 */
+    .classification-ladder {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
+        width: min(760px, 92vw);
+
+        align-items: end;
+    }
+
+    .classification-ladder .levelBlock:first-child {
+        grid-column: 1 / -1;
+        width: min(480px, 100%);
+        margin-inline: auto;
+    }
+
+    .block {
+        gap: 12px;
+    }
+
+    .ladderStep {
+        height: calc(170px + var(--level) * 24px);
+    }
+
+    .levelContent {
+        font-size: 16px;
+    }
+
+    .levelRole {
+        order: -1;
+    }
+}
+
+/* 階梯圖改成單組排列 */
+@media screen and (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .classification-ladder {
+        grid-template-columns: 1fr;
+        width: min(480px, 88vw);
+        row-gap: 48px;
+    }
+
+    .classification-ladder .levelBlock:first-child {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .levelBlock {
+        width: 100%;
+    }
+
+    .block {
+        gap: 16px;
+    }
+
+    .ladderStep {
+        width: 50%;
+        height: calc(170px + var(--level) * 20px);
+    }
+
+    .levelContent {
+        font-size: 16px;
+    }
+
+    .levelRole {
+        order: -1;
+        margin-bottom: 14px;
+    }
+
+    /* 通用文字避免太貼邊 */
+    .contentInfo,
+    .wordWithImg,
+    .logicContent {
+        width: min(520px, 88vw);
+        margin-inline: auto;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .contentInfo br {
+        display: none;
+    }
+
+    /* visualIntro：改成上下排列，不硬塞成左右雙欄 */
+    .visualImgDiv {
+        width: min(560px, 88vw);
+        margin: 60px auto 0;
+        padding-inline: 0;
+        padding-bottom: 80px;
+
+        flex-direction: column;
+        gap: 56px;
+    }
+
+    .visualImgDiv>div {
+        width: 100%;
+        gap: 18px;
+    }
+
+    .visualImg,
+    .visualImg2 {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 16px;
+    }
+
+    .visualImgDiv div p {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .visualImgDiv>div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .visualImgDiv>div:nth-child(2) p {
+        order: 2;
+    }
+
+    .visualImgDiv>div:nth-child(2) img {
+        order: 1;
+    }
+
+    /* 情境輪播圖改單張播放調整，按鈕跟著調至圖片下方 */
+    .stageViewport {
+        padding: 60px 0 120px;
+    }
+
+    .stageWindow {
+        width: min(420px, 82vw);
+    }
+
+    .cards {
+        flex: 0 0 100%;
+    }
+
+    .stageText {
+        min-height: auto;
+        font-size: 16px;
+    }
+
+    .stageNavBtn {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        font-size: 20px;
+    }
+
+    #previousStage,
+    #nextStage {
+        top: auto;
+        bottom: 72px;
+        right: auto;
+        left: 50%;
+    }
+
+    #previousStage {
+        transform: translateX(-120%);
+    }
+
+    #nextStage {
+        transform: translateX(20%);
+    }
+
+    #previousStage:hover {
+        transform: translateX(-120%) translateY(-2px);
+    }
+
+    #nextStage:hover {
+        transform: translateX(20%) translateY(-2px);
+    }
+
+    #previousStage:active {
+        transform: translateX(-120%);
+    }
+
+    #nextStage:active {
+        transform: translateX(20%);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2,
+    .classLogic h2,
+    .visualIntro h2 {
+        font-size: 22px;
+    }
+
+    .classification-ladder {
+        width: min(360px, 88vw);
+    }
+
+    .ladderStep {
+        height: 210px;
+    }
+
+    .levelContent {
+        font-size: 14px;
+    }
+
+    .visualImgDiv {
+        width: 88vw;
+        gap: 48px;
+    }
+
+    .stageText {
+        font-size: 14px;
     }
 }
