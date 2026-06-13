@@ -488,7 +488,8 @@ footer {
 
     .nav-wrap nav ul li a {
         display: block;
-        width: 28%;
+        width: 40%;
+        /* 原先設定28%的寬度在手機上會太窄，改用40%讓按鈕更好點擊 */
         height: fit-content;
         margin-inline: auto;
         padding: 10px 25px;
