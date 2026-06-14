@@ -58,15 +58,15 @@
             <div class="heroArea">
                 <div class="heroImg" id="hero1">
                     <p class="heroWord"><strong>雙語教學支持</strong></p>
-                    <p class="heroWord">中英雙語授課，自在切換。</p>
+                    <p class="heroWord">中英雙語授課，自在切換</p>
                 </div>
                 <div class="heroImg" id="hero2">
                     <p class="heroWord"><strong>CEFR 對齊設計</strong></p>
-                    <p class="heroWord">依學習路徑系統規劃。</p>
+                    <p class="heroWord">依學習路徑系統規劃</p>
                 </div>
                 <div class="heroImg" id="hero3">
                     <p class="heroWord"><strong>友善學習節奏</strong></p>
-                    <p class="heroWord">為忙碌學員設計的學習步調。</p>
+                    <p class="heroWord">忙碌學員友善的學習步調</p>
                 </div>
             </div>
             <hr id="bottomLine">
@@ -75,6 +75,7 @@
 
     <!--教師卡片區塊-->
     <section class="tutors">
+        <p class='mobileText'>點擊圖卡，查看教師資訊 ▼</p>
         <div class="tutorsDiv">
             <!--卡片1-->
             <div class="tutorImgFrame">
@@ -173,8 +174,10 @@
                 </div>
             </div>
             <!--CTA按鈕-->
-            <a href="SignUp.html" id="signInforTutor">註冊查看完整教師名單與預約</a>
+            <a href="SignUp.html" id="signInforTutor">註冊查看教師名單及預約</a>
         </div>
+        <!--手機板CTA按鈕-->
+        <a href="SignUp.html" id="signInforTutorMobile">註冊查看完整教師名單與預約</a>
     </section>
 
     <!--最後footer頁尾-->
@@ -211,6 +214,19 @@
             <small>© 2026 Noctra. All rights reserved.</small>
         </div>
     </footer>
+    <script>
+        const tutorCards = document.querySelectorAll(".tutorImgFrame"); //所有教師卡片
+
+        //讓手機版本下，點擊卡片時，才會出現資訊文字
+        tutorCards.forEach((card) => {
+            card.addEventListener("click", () => {
+                //當瀏覽器視窗寬度低於480時(手機)，才套用這個函式
+                if (window.innerWidth <= 480) {
+                    card.classList.toggle("show");
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
