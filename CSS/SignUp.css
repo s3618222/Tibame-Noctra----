@@ -341,10 +341,6 @@ hr {
 }
 
 @media (max-width: 480px) {
-    body {
-        /*     padding-inline: 12px; */
-    }
-
     .signUpArea {
         width: 100%;
         margin: 36px auto 20px;
