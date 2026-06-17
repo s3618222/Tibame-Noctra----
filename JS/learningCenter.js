@@ -49,6 +49,14 @@ logoutLink.addEventListener('click', () => {
     window.location.href = "index.html"; //跳轉回訪客介面首頁
 });
 
+//手機介面下的登出帳號連結設定
+const mobileLogoutLink = document.getElementById("mobile-logout");
+mobileLogoutLink.addEventListener("click", () => {
+    localStorage.removeItem("currentNoctraUser"); //清除目前登入者js紀錄
+
+    window.location.href = "index.html"; //跳轉回訪客介面首頁
+});
+
 
 const userInfoBtn = document.getElementById("user-info"); //使用者下拉選單按鈕
 const userDropdown = document.querySelector(".user-dropdown"); //下拉選單

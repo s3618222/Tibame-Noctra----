@@ -347,43 +347,8 @@ h1 {
     }
 }
 
-/* 1000px 以下：header、filter 區塊縮小 */
+
 @media screen and (max-width: 1000px) {
-    .top-bar {
-        padding-inline: 16px;
-    }
-
-    .logo {
-        width: 170px;
-    }
-
-    .nav-wrap {
-        gap: 12px;
-    }
-
-    nav ul {
-        gap: 18px;
-    }
-
-    header nav ul li,
-    .member-buttons a {
-        font-size: 17px;
-    }
-
-    .member-buttons {
-        gap: 16px;
-        padding-right: 0;
-    }
-
-    #subscribe {
-        padding: 8px 16px;
-    }
-
-    #user-icon {
-        width: 46px;
-        height: 46px;
-    }
-
     .labelDiv {
         margin-top: 40px;
         padding: 20px 24px 4px;
@@ -438,22 +403,8 @@ h1 {
     }
 }
 
-/* 760px 以下：雖然已接近平板，但先防止 header 擠爆 */
+
 @media screen and (max-width: 760px) {
-    body {
-        padding-top: 96px;
-    }
-
-    .top-bar {
-        flex-wrap: wrap;
-        row-gap: 8px;
-    }
-
-    .member-buttons {
-        width: 100%;
-        justify-content: flex-end;
-    }
-
     .courseDiv {
         width: min(560px, 92vw);
         column-gap: 28px;

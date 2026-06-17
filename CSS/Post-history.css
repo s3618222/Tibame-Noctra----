@@ -829,28 +829,6 @@ h2 {
 
 /* 寬度低於960時 */
 @media screen and (max-width: 960px) {
-    .top-bar {
-        padding-inline: 16px;
-    }
-
-    .logo {
-        width: 170px;
-    }
-
-    header nav ul {
-        gap: 18px;
-    }
-
-    header nav ul li,
-    .member-buttons a {
-        font-size: 17px;
-    }
-
-    .member-buttons {
-        gap: 14px;
-        padding-right: 0;
-    }
-
     .badgesDiv {
         padding: 14px;
         gap: 16px;

@@ -13,6 +13,14 @@ logoutLink.addEventListener('click', () => {
     window.location.href = "index.html"; //跳轉回訪客介面首頁
 });
 
+//手機介面下的登出帳號連結設定
+const mobileLogoutLink = document.getElementById("mobile-logout");
+mobileLogoutLink.addEventListener("click", () => {
+    localStorage.removeItem("currentNoctraUser"); //清除目前登入者js紀錄
+
+    window.location.href = "index.html"; //跳轉回訪客介面首頁
+});
+
 // 載入youtube API
 let tag = document.createElement("script");
 tag.src = "https://www.youtube.com/iframe_api";
