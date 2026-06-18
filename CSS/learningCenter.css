@@ -1,3 +1,4 @@
+/* ======== Noctra Design Starts ======= */
 /* 歡迎使用者背景區塊 */
 .hero-welcome {
     width: 100%;
@@ -26,7 +27,7 @@
 .sub-words {
     display: flex;
     align-items: center;
-    background-color: #D4DCE7;
+    background-color: #d4dce7;
 
     font-size: 18px;
     gap: 80px;
@@ -116,14 +117,11 @@
     border: 1px solid rgba(49, 65, 88, 0.08);
     background: rgba(255, 255, 255, 0.58);
 
-    box-shadow:
-        0 14px 34px rgba(15, 23, 42, 0.05),
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.05),
         0 1px 0 rgba(255, 255, 255, 0.75) inset;
 
     backdrop-filter: blur(10px);
 }
-
-
 
 /* 繼續學習、Continue Learning區塊 */
 .sectionTitles {
@@ -147,7 +145,6 @@
     width: 500px;
     margin: 50px auto 20px;
     border-radius: 20%;
-
 }
 
 .noCurrentLesson p {
@@ -195,18 +192,15 @@
     border: 1px solid #b8c3d1;
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
 
-    transition:
-        background-color .15s ease,
-        border-color .15s ease,
-        color .15s ease,
-        transform .15s ease;
+    transition: background-color 0.15s ease, border-color 0.15s ease,
+        color 0.15s ease, transform 0.15s ease;
 }
 
 .noctraUser-btn:hover {
     background-color: #b9c6d6;
     border-color: #a9b6c8;
     color: #0b1224;
-    transform: translateY(-1px)
+    transform: translateY(-1px);
 }
 
 .noctraUser-btn:active {
@@ -229,8 +223,8 @@
     border-radius: 16px;
 
     background: #ffffff;
-    border: 1px solid rgba(31, 42, 68, .18);
-    box-shadow: 0 1px 0 rgba(255, 255, 255, .85) inset;
+    border: 1px solid rgba(31, 42, 68, 0.18);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset;
 }
 
 .currentLessonActions {
@@ -285,7 +279,7 @@
     color: #314158;
     text-decoration: underline;
     text-underline-offset: 4px;
-    opacity: .8;
+    opacity: 0.8;
 }
 
 .courseLink:hover {
@@ -311,7 +305,7 @@
 
 .courseCards p {
     font-size: 16px;
-    color: rgba(17, 24, 39, .64);
+    color: rgba(17, 24, 39, 0.64);
 }
 
 /* 課程level標籤 */
@@ -322,20 +316,18 @@
     font-style: normal;
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: .6px;
+    letter-spacing: 0.6px;
 
     padding: 6px 10px;
     border-radius: 999px;
 
-    background: rgba(31, 42, 68, .12);
-    color: rgba(17, 24, 39, .78);
+    background: rgba(31, 42, 68, 0.12);
+    color: rgba(17, 24, 39, 0.78);
 
     align-self: flex-start;
     margin-left: 10px;
     margin-bottom: 14px;
 }
-
-
 
 /* avatar學習夥伴區塊 */
 .noctraCompanion {
@@ -363,11 +355,9 @@
     border-radius: 24px;
     border: 1px solid rgba(49, 65, 88, 0.12);
     background-color: #f8f6f2;
-    box-shadow:
-        0 22px 48px rgba(15, 23, 42, 0.08),
+    box-shadow: 0 22px 48px rgba(15, 23, 42, 0.08),
         0 1px 0 rgba(255, 255, 255, 0.65) inset;
     overflow: hidden;
-
 }
 
 .token-bar {
@@ -375,7 +365,7 @@
     box-sizing: border-box;
     height: auto;
     padding: 10px 15px;
-    border-bottom: 1px solid rgba(31, 42, 68, .08);
+    border-bottom: 1px solid rgba(31, 42, 68, 0.08);
 
     display: flex;
     align-items: center;
@@ -473,12 +463,10 @@
     z-index: 2;
 }
 
-
 #avatarSetup-btn {
     display: block;
     margin: 20px auto;
 }
-
 
 /* avatar自訂介面 */
 /* 後續可用JS設定flex打開 */
@@ -491,8 +479,7 @@
     border-radius: 26px;
 
     background-color: #f8f6f2;
-    box-shadow:
-        0 22px 48px rgba(15, 23, 42, 0.08),
+    box-shadow: 0 22px 48px rgba(15, 23, 42, 0.08),
         0 1px 0 rgba(255, 255, 255, 0.65) inset;
 
     display: none;
@@ -512,7 +499,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-
 }
 
 .token {
@@ -550,15 +536,13 @@
 
     position: relative;
     background-color: #eeebe4;
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 #saveAvatar {
     font-size: 18px;
     padding: 12px 18px;
 }
-
 
 /* avatar各區塊大小及位置調整 */
 /* 腳色基底圖 */
@@ -633,7 +617,6 @@
     border-color: transparent #444 transparent transparent;
     position: absolute;
     top: 50%;
-
 }
 
 /* 右側三角按鈕*/
@@ -660,7 +643,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .wardrobeButtons {
@@ -676,16 +658,16 @@
 .wardrobeButton {
     padding: 8px 20px;
     border-radius: 999px;
-    border: 1px solid rgba(49, 65, 88, .14);
+    border: 1px solid rgba(49, 65, 88, 0.14);
 
-    background-color: rgba(255, 255, 255, .7);
+    background-color: rgba(255, 255, 255, 0.7);
     color: #314158;
 
     font-size: 15px;
     font-weight: 500;
 
     cursor: pointer;
-    transition: all .18s ease;
+    transition: all 0.18s ease;
 }
 
 .wardrobeButton:hover {
@@ -714,8 +696,8 @@
     aspect-ratio: 1 / 1.15;
 
     border-radius: 18px;
-    border: 1px solid rgba(49, 65, 88, .10);
-    background-color: rgba(255, 255, 255, .85);
+    border: 1px solid rgba(49, 65, 88, 0.1);
+    background-color: rgba(255, 255, 255, 0.85);
 
     display: flex;
     flex-direction: column;
@@ -723,9 +705,9 @@
     justify-content: center;
     gap: 8px;
 
-    box-shadow: 0 10px 22px rgba(15, 23, 42, .05);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.05);
 
-    transition: all .18s ease;
+    transition: all 0.18s ease;
 }
 
 .head-items>div:hover,
@@ -736,7 +718,7 @@
     transform: translateY(-2px);
 
     background-color: #eef3f8;
-    box-shadow: 0 18px 32px rgba(15, 23, 42, .08);
+    box-shadow: 0 18px 32px rgba(15, 23, 42, 0.08);
 }
 
 .head-items div:active {
@@ -762,7 +744,7 @@
     gap: 6px;
 
     cursor: pointer;
-    transition: all .18s ease;
+    transition: all 0.18s ease;
 }
 
 .buyButtons img {
@@ -814,14 +796,13 @@
 /* 穿戴後，按鈕樣式切換 */
 .buyButtons.equipped {
     background: linear-gradient(to bottom, #dce5f0, #eef3f8);
-    border: 1px solid rgba(122, 143, 173, .55);
+    border: 1px solid rgba(122, 143, 173, 0.55);
 
     color: #1f2937;
     font-weight: 800;
 
-    box-shadow:
-        0 10px 22px rgba(15, 23, 42, .08),
-        0 0 0 2px rgba(180, 193, 212, .28) inset;
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08),
+        0 0 0 2px rgba(180, 193, 212, 0.28) inset;
 }
 
 /* 區域按鈕點擊後的常駐狀態*/
@@ -831,7 +812,7 @@
     border: 1px solid #b8c3d1;
     font-weight: 700;
 
-    box-shadow: 0 6px 14px rgba(15, 23, 42, .08);
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
 }
 
 /* 上衣區域配件  後續可用JS設定grid打開*/
@@ -878,14 +859,12 @@
 .bottom-btn.equipped {
     transform: translateY(-5px);
     background: linear-gradient(to bottom, #dce5f0, #eef3f8);
-    border: 1px solid rgba(122, 143, 173, .55);
+    border: 1px solid rgba(122, 143, 173, 0.55);
 
-    box-shadow:
-        0 12px 26px rgba(15, 23, 42, .08),
-        0 0 0 2px rgba(180, 193, 212, .28) inset;
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08),
+        0 0 0 2px rgba(180, 193, 212, 0.28) inset;
     font-weight: 700;
 }
-
 
 /* 訂閱方案區塊 */
 .subscribe-intro {
@@ -920,7 +899,7 @@
 }
 
 .fees {
-    transform: scale(1.2);
+    font-size: 24px;
     padding-bottom: 10px;
 }
 
@@ -935,7 +914,7 @@
     padding: 14px 0;
     border-radius: 999px;
 
-    background-color: #B4C1D4;
+    background-color: #b4c1d4;
     color: #0f172a;
     border: 1.5px solid #9fb0c9;
 
@@ -945,10 +924,8 @@
 
     box-shadow: 0 5px 12px rgba(15, 23, 42, 0.18);
 
-    transition:
-        background-color .18s ease,
-        box-shadow .18s ease,
-        transform .14s ease;
+    transition: background-color 0.18s ease, box-shadow 0.18s ease,
+        transform 0.14s ease;
 }
 
 .subscribe-btn:hover {
@@ -959,7 +936,7 @@
 
 .subscribe-btn:active {
     transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.20);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
 }
 
 .subscribeDiv {
@@ -977,14 +954,16 @@
     padding: 20px 20px 0 20px;
     background-color: #ffffff;
     border: none;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
 .subscribePlan hr {
     margin-bottom: 45px;
 }
 
-/* ===== Desktop RWD：中小桌機 / 平板橫向 ===== */
+
+
+/* ======= 學習中心 RWD CSS設定 ======== */
 @media screen and (max-width: 1080px) {
 
     .continueLearning,
@@ -1013,13 +992,16 @@
         padding: 12px 24px;
     }
 
+    p:has(.noctra-token) {
+        margin-right: 20px;
+    }
+
     .head-items>div,
     .body-items>div,
     .bottom-items>div {
         width: clamp(100px, 12vw, 130px);
     }
 }
-
 
 @media screen and (max-width: 920px) {
     .avatarSetup {
@@ -1033,7 +1015,7 @@
     .wardrobe {
         min-width: 300px;
         padding: 12px 20px;
-        margin-block: auto
+        margin-block: auto;
     }
 
     .wardrobeTopBar {
@@ -1083,7 +1065,6 @@
         align-self: center;
         aspect-ratio: 1 / 1.15;
     }
-
 }
 
 /* ===== 820px：avatar區改單欄排列 ===== */
@@ -1155,5 +1136,288 @@
     .bottom-items>div {
         width: 100%;
         align-self: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-welcome {
+        height: auto;
+        min-height: 420px;
+        padding: 44px 24px 36px;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .welcomeAvatar {
+        width: clamp(250px, 58vw, 340px);
+        flex-shrink: 0;
+    }
+
+    .welcomeWords {
+        font-size: 20px;
+    }
+
+    .sub-words {
+        flex-direction: column;
+        gap: 4px;
+        padding: 14px 16px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .sub-words p {
+        margin: 0;
+    }
+
+    .continueLearning,
+    .classRecommend {
+        width: min(680px, calc(100% - 32px));
+        margin: 56px auto;
+        padding: 32px 24px;
+        border-radius: 26px;
+    }
+
+    .sectionTitles {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .userTitles {
+        font-size: 26px;
+        margin: 0;
+    }
+
+    .historyLink,
+    .courseLink {
+        font-size: 16px;
+    }
+
+    .currentLesson-info p:nth-of-type(1),
+    .currentLesson-info p:nth-of-type(2) {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .currentLesson-info {
+        width: 100%;
+        padding: 14px 18px;
+        font-size: 18px;
+    }
+
+    .noCurrentLesson img {
+        width: min(420px, 90%);
+        margin-top: 32px;
+    }
+
+    #checkCourse-btn,
+    #currentCourse-btn {
+        font-size: 20px;
+    }
+
+    .classCardsArea {
+        width: 100%;
+    }
+
+    .classCards {
+        justify-content: flex-start;
+        overflow-x: auto;
+        gap: 18px;
+        padding: 4px 4px 18px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .classCards .courseCards {
+        flex: 0 0 260px;
+        scroll-snap-align: center;
+    }
+
+    .noctraCompanion {
+        width: min(680px, calc(100% - 32px));
+        margin: 56px auto;
+    }
+
+    .avatarLook {
+        width: min(520px, 100%);
+        min-height: auto;
+        padding-bottom: 24px;
+    }
+
+    .avatarCard {
+        width: min(360px, 86%);
+    }
+
+    .avatarSetup {
+        width: min(520px, 100%);
+    }
+
+    p:has(.noctra-token) {
+        margin-right: 12px;
+    }
+
+
+    .subscribe-intro h2 {
+        margin-left: 0;
+        text-align: center;
+        font-size: 26px;
+    }
+
+    .subscribeDiv {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        padding: 0 24px;
+    }
+
+    .subscribePlan {
+        width: min(420px, 100%);
+    }
+}
+
+/* ===== 480px：手機 ===== */
+@media screen and (max-width: 480px) {
+    .hero-welcome {
+        min-height: 390px;
+        padding: 34px 18px 30px;
+    }
+
+    .welcomeAvatar {
+        width: clamp(230px, 72vw, 300px);
+    }
+
+    .welcomeWords {
+        font-size: 18px;
+    }
+
+    .hero-welcome p {
+        padding: 7px;
+    }
+
+    .continueLearning,
+    .classRecommend {
+        width: min(100% - 24px, 440px);
+        margin: 44px auto;
+        padding: 26px 18px;
+        border-radius: 22px;
+    }
+
+    .userTitles {
+        font-size: 24px;
+        text-align: left;
+    }
+
+    .noctraUser-btn {
+        font-size: 18px;
+        padding: 11px 18px;
+    }
+
+    #checkCourse-btn,
+    #currentCourse-btn,
+    .subscribe-btn {
+        font-size: 18px;
+    }
+
+    .currentLesson-info {
+        font-size: 16px;
+        padding: 12px 14px;
+    }
+
+    #currentLesson-title,
+    #currentIntro,
+    #currentTime {
+        display: block;
+        margin: 8px 0 14px;
+    }
+
+    .classCards .courseCards {
+        flex-basis: 82%;
+        min-width: 250px;
+    }
+
+    .avatarIntro {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .avatarLook {
+        border-radius: 22px;
+    }
+
+    .token-bar {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .token-bar p {
+        font-size: 16px;
+    }
+
+    .tokenImg {
+        width: 44px;
+    }
+
+    .avatarCard {
+        width: min(320px, 88%);
+    }
+
+    .avatarUI {
+        padding: 22px 16px 20px;
+    }
+
+    .avatarStage {
+        width: min(320px, 92%);
+    }
+
+    .wardrobe {
+        padding: 28px 16px 24px;
+    }
+
+    .wardrobeTopBar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .wardrobeButtons {
+        justify-content: center;
+    }
+
+    .token {
+        margin: 0 auto;
+    }
+
+    .head-items,
+    .body-items,
+    .bottom-items {
+        grid-auto-columns: 104px;
+        column-gap: 16px;
+        padding-bottom: 16px;
+    }
+
+    .itemsIcon {
+        width: 56px;
+    }
+
+    .buyButtons {
+        width: 82px;
+        height: 32px;
+    }
+
+    .subscribe-intro h2 {
+        margin-left: 0;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .subscribeDiv {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 18px;
+    }
+
+    .subscribePlan {
+        width: 100%;
+        max-width: 360px;
     }
 }
