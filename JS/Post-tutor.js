@@ -671,6 +671,8 @@ tutorContainer.addEventListener("click", (e) => {
     //e.target則可以鎖定「真正被點中」的那個元素，在這邊用來找出預約按鈕
 
     if (e.target.classList.contains("reserveBtn")) {
+        e.stopPropagation(); //避免事件冒泡至document，將表單關閉
+
         //把執行邏輯限縮在，只有真的是"預約課程"按鈕被點擊時，才執行
 
         const card = e.target.closest(".tutorCard")
@@ -696,6 +698,24 @@ cancelBtn.addEventListener("click", () => {
     //初始化、清空原先的欄位資訊，避免開啟新表單時，舊有填寫的資料還在上面
 
     directRequestForm.classList.remove("show"); //關閉預約表單
+});
+
+//點擊外圍區域時，讓教師預約表單可以被關閉
+document.addEventListener("click", () => {
+    //確認教師預約表單已經是打開狀態，再將其關閉
+    if (directRequestForm.classList.contains("show")) {
+        directRequestForm.classList.remove("show");
+
+        //重置表單內容
+        lessonDate.value = "";
+        lessonTime.value = "09:00";
+        needNote.value = "";
+    }
+});
+
+//防止教師表單的按鈕點擊事件冒泡，避免其上傳至document又將表單關閉
+directRequestForm.addEventListener("click", (e) => {
+    e.stopPropagation();
 });
 
 //我的預約狀態區塊顯示
