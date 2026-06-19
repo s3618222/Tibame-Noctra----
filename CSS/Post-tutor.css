@@ -92,7 +92,7 @@ h1 {
 
     cursor: pointer;
 
-    transition: all .2s ease;
+    transition: all 0.2s ease;
 }
 
 #myRequestBtn:hover {
@@ -128,7 +128,7 @@ h1 {
     font-size: 16px;
     line-height: 1.8;
     color: #475569;
-    margin: 5px 0;
+    margin: 6px 0;
 }
 
 .requestDate {
@@ -173,22 +173,21 @@ h1 {
 
 /* 預約確認狀態 */
 .requestStatus.confirmed {
-    background: rgba(100, 181, 246, .18);
+    background: rgba(100, 181, 246, 0.18);
     color: rgba(30, 64, 175, 0.8);
 }
 
 /* 完課狀態 */
 .requestStatus.completed {
-    background: rgba(134, 239, 172, .22);
+    background: rgba(134, 239, 172, 0.22);
     color: #166534;
 }
 
 /* 預約取消狀態 */
 .requestStatus.cancelled {
-    background: #F3E7E3;
+    background: #f3e7e3;
     color: #64748b;
 }
-
 
 #requestList {
     max-height: 260px;
@@ -227,15 +226,13 @@ h1 {
     color: #475569;
     cursor: pointer;
 
-    transition:
-        background-color .18s ease,
-        border-color .18s ease,
-        transform .18s ease;
+    transition: background-color 0.18s ease, border-color 0.18s ease,
+        transform 0.18s ease;
 }
 
 .cancelRequestBtn:hover {
-    background: rgba(31, 42, 68, .08);
-    border-color: rgba(31, 42, 68, .18);
+    background: rgba(31, 42, 68, 0.08);
+    border-color: rgba(31, 42, 68, 0.18);
     color: #334155;
 
     transform: translateY(-1px);
@@ -252,7 +249,6 @@ h1 {
     font-size: 16px;
     padding: 18px 0;
 }
-
 
 /* 分類按鈕 */
 .tutorTags {
@@ -273,7 +269,7 @@ h1 {
     background: rgba(255, 255, 255, 0.7);
     color: #334155;
 
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     cursor: pointer;
 }
 
@@ -325,7 +321,7 @@ h1 {
     font-size: 16px;
     color: #334155;
 
-    transition: background .18s ease;
+    transition: background 0.18s ease;
 }
 
 .tagButtons:hover {
@@ -347,7 +343,7 @@ h1 {
 #levelBtn.highlight,
 #accentBtn.highlight,
 #subjectBtn.highlight {
-    background: #B4C1D4;
+    background: #b4c1d4;
     color: #0b1224;
     border-color: rgba(180, 193, 212, 0.8);
 }
@@ -383,10 +379,8 @@ h1 {
 
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
 
-    transition:
-        transform .22s ease,
-        box-shadow .22s ease,
-        border-color .22s ease;
+    transition: transform 0.22s ease, box-shadow 0.22s ease,
+        border-color 0.22s ease;
 }
 
 .tutorCard:hover {
@@ -412,7 +406,7 @@ h1 {
     object-fit: cover;
     display: block;
 
-    transition: transform .35s ease;
+    transition: transform 0.35s ease;
 }
 
 .tutorCard:hover .tutorSelfie {
@@ -437,7 +431,6 @@ h1 {
     color: #0f172a;
     margin: 5px 0 10px;
 }
-
 
 .accent,
 .goodRate,
@@ -473,7 +466,6 @@ h1 {
     margin-top: 5px;
 }
 
-
 .infoIcon {
     width: 45px;
     flex-shrink: 0;
@@ -496,12 +488,8 @@ h1 {
     border: 1px solid #b8c3d1;
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
 
-    transition:
-        background-color .15s ease,
-        border-color .15s ease,
-        color .15s ease,
-        transform .15s ease,
-        box-shadow .15s ease;
+    transition: background-color 0.15s ease, border-color 0.15s ease,
+        color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .reserveBtn:hover {
@@ -533,7 +521,6 @@ h1 {
     transform: none;
 }
 
-
 /* 篩選條件無結果時的設定 */
 .emptyState {
     /* 後續再調整樣式，範例可以選用進階、英國、休閒 */
@@ -541,13 +528,12 @@ h1 {
     text-align: center;
     padding: 60px 100px;
     border-radius: 18px;
-    background: rgba(255, 255, 255, .55);
-    border: 1px solid rgba(17, 24, 39, .08);
-    color: rgba(17, 24, 39, .72);
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    color: rgba(17, 24, 39, 0.72);
     font-size: 20px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, .04);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
 }
-
 
 /* 課程預約表單區塊 */
 .directRequestForm {
@@ -562,11 +548,25 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow: hidden;
 
     z-index: 10000;
     max-height: calc(100vh - 120px);
     overflow-y: auto;
+
+    scrollbar-width: thin;
+}
+
+.directRequestForm::-webkit-scrollbar {
+    width: 6px;
+}
+
+.directRequestForm::-webkit-scrollbar-thumb {
+    background: rgba(100, 116, 139, 0.35);
+    border-radius: 999px;
+}
+
+.directRequestForm::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .directRequestForm.show {
@@ -631,7 +631,8 @@ h1 {
     cursor: pointer;
     box-sizing: border-box;
 
-    transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease,
+        background-color 0.18s ease;
 }
 
 .requestDetails select:focus,
@@ -672,7 +673,8 @@ h1 {
     color: #1e293b;
     outline: none;
 
-    transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease,
+        background-color 0.18s ease;
 }
 
 .noteDiv textarea:focus {
@@ -706,7 +708,8 @@ h1 {
     cursor: pointer;
     box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
 
-    transition: background-color .18s ease, transform .18s ease, box-shadow .18s ease;
+    transition: background-color 0.18s ease, transform 0.18s ease,
+        box-shadow 0.18s ease;
 }
 
 #makeRequestBtn:hover {
@@ -730,7 +733,8 @@ h1 {
     color: #475569;
     cursor: pointer;
 
-    transition: background-color .18s ease, border-color .18s ease, transform .18s ease;
+    transition: background-color 0.18s ease, border-color 0.18s ease,
+        transform 0.18s ease;
 }
 
 #cancelBtn:hover {
@@ -738,7 +742,10 @@ h1 {
     border-color: rgba(15, 23, 42, 0.16);
 }
 
-/* RWD設定 */
+
+
+
+/* ============== 教師預約分頁RWD設定 ============== */
 /* 1500px 以下：卡片、間距縮小 */
 @media screen and (max-width: 1500px) {
 
@@ -815,7 +822,7 @@ h1 {
     }
 
     #myRequestBtn {
-        font-size: 19px;
+        font-size: 20px;
         padding: 9px 22px;
     }
 
@@ -832,5 +839,377 @@ h1 {
 
     .directRequestForm {
         width: min(460px, calc(100vw - 48px));
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    /* 教師分類外框 */
+    .tutorClassification {
+        width: min(680px, 92vw);
+        margin: 44px auto 60px;
+        padding: 26px 24px;
+    }
+
+    /* 標題區 */
+    .tutorTitle {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .titleDiv {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .tutorTitle p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* 我的預約 */
+    .myRequestDiv {
+        width: 100%;
+    }
+
+    #myRequestForm {
+        width: min(420px, calc(100vw - 48px));
+        left: 0;
+        right: auto;
+        top: 58px;
+        padding: 18px;
+    }
+
+    #requestList {
+        max-height: 300px;
+    }
+
+    .requestTutorName {
+        font-size: 20px;
+    }
+
+    /* 分類按鈕 */
+    .tutorTags {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .tagTitle {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+
+    /* 教師卡片：768維持二欄 */
+    .tutors {
+        width: min(680px, 92vw);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 24px;
+        row-gap: 36px;
+    }
+
+    .tutorCard {
+        max-width: none;
+    }
+
+    .selfieDiv {
+        height: 230px;
+    }
+
+    .tutorInfo {
+        padding: 15px 15px 18px;
+    }
+
+    .tutorName {
+        font-size: 24px;
+    }
+
+    .accent p,
+    .goodRate p,
+    .levels p,
+    .specialties p {
+        font-size: 15px;
+        line-height: 1.45;
+    }
+
+    .infoIcon {
+        width: 42px;
+    }
+
+    .reserveBtn {
+        font-size: 18px;
+        padding: 10px 30px;
+    }
+
+    /* 教師預約表單 */
+    .directRequestForm {
+        width: min(450px, calc(100vw - 48px));
+        max-height: calc(100vh - 110px);
+        border-radius: 22px;
+    }
+
+    .directRequestForm h2 {
+        font-size: 22px;
+        padding: 18px 24px 4px;
+    }
+
+    .requestTutorInfo {
+        padding: 15px 20px;
+    }
+
+    .requestDetails {
+        padding: 6px 24px 24px;
+    }
+
+    .requestDetails label {
+        font-size: 18px;
+    }
+
+    .requestDetails select,
+    .requestDetails input {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .noteDiv textarea {
+        min-height: 130px;
+    }
+
+    .requestBtnDiv {
+        justify-content: flex-end;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+    /* ===== 教師分類區塊 ===== */
+    .tutorClassification {
+        width: 92%;
+        margin: 32px auto 48px;
+        padding: 20px 16px;
+        border-radius: 18px;
+    }
+
+    .tutorTitle {
+        gap: 22px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .tutorTitle p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    #topLine {
+        margin: 18px 0 20px;
+    }
+
+    /* ===== 我的預約區 ===== */
+    .myRequestDiv {
+        width: 100%;
+    }
+
+    #myRequestBtn {
+        font-size: 18px;
+    }
+
+    #myRequestForm {
+        width: calc(100vw - 36px);
+        left: 50%;
+        right: auto;
+        top: 60px;
+        transform: translateX(-50%);
+
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    #myRequestForm h2 {
+        font-size: 20px;
+    }
+
+    #myRequestForm p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    #requestList {
+        max-height: 300px;
+    }
+
+    .recentRequestBox {
+        padding: 12px;
+    }
+
+    .cancelRequestBtn {
+        font-size: 16px;
+        padding: 8px 14px;
+    }
+
+    /* ===== 分類按鈕 ===== */
+    .tutorTags {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .tags {
+        width: 100%;
+    }
+
+    .tagTitle {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px 0;
+    }
+
+    .tagSpread {
+        width: 130px;
+        top: 50px;
+        padding: 10px;
+    }
+
+    /* 主題分類選單改靠右對齊，往左展開 */
+    #subjectSpread {
+        left: auto;
+        right: 0;
+    }
+
+    .tagButtons {
+        font-size: 15px;
+        padding: 8px 6px;
+    }
+
+    /* ===== 教師卡片區 ===== */
+    .tutors {
+        width: 90%;
+        margin: 42px auto;
+        grid-template-columns: 1fr;
+        row-gap: 28px;
+    }
+
+    .tutorCard {
+        max-width: none;
+        border-radius: 18px;
+    }
+
+    .selfieDiv {
+        height: 260px;
+    }
+
+    .tutorInfo {
+        padding: 16px 16px 20px;
+    }
+
+    .tutorName {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .accent p,
+    .goodRate p,
+    .levels p,
+    .specialties p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .infoIcon {
+        width: 42px;
+    }
+
+    .reserveBtn {
+        width: 90%;
+        font-size: 18px;
+        padding: 12px 0;
+        margin-top: 22px;
+    }
+
+    .emptyState {
+        padding: 42px 24px;
+        font-size: 17px;
+    }
+
+    /* ===== 教師預約表單 ===== */
+    .directRequestForm {
+        width: calc(100vw - 40px);
+        max-height: calc(100vh - 40px);
+        border-radius: 18px;
+    }
+
+    .requestTutorInfo {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 16px;
+    }
+
+    .tutorAvatar {
+        width: 58px;
+        height: 58px;
+    }
+
+    .requestTutorName {
+        font-size: 20px;
+    }
+
+    .directRequestForm h2 {
+        text-align: center;
+        font-size: 20px;
+        padding: 18px 18px 4px;
+    }
+
+    .requestDetails {
+        padding: 6px 18px 20px;
+    }
+
+    .requestDetails label {
+        font-size: 16px;
+    }
+
+    .dateChoice,
+    .timeChoice {
+        gap: 8px;
+        margin: 16px 0 18px;
+    }
+
+    .requestDetails select,
+    .requestDetails input {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px 14px;
+    }
+
+    .noteDiv textarea {
+        min-height: 110px;
+        font-size: 15px;
+        padding: 12px 14px;
+    }
+
+    .requestBtnDiv {
+        margin-top: 18px;
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    #makeRequestBtn,
+    #cancelBtn {
+        width: 40%;
+        font-size: 16px;
+        padding: 10px 0;
     }
 }
