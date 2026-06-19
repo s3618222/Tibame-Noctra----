@@ -6,9 +6,9 @@
     width: min(1000px, 88vw);
     padding: 22px 28px 0px;
     border-radius: 24px;
-    background: rgba(255, 255, 255, .42);
-    border: 1px solid rgba(17, 24, 39, .06);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, .03);
+    background: rgba(255, 255, 255, 0.42);
+    border: 1px solid rgba(17, 24, 39, 0.06);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.03);
     backdrop-filter: blur(10px);
 }
 
@@ -56,8 +56,8 @@ h1 {
     margin: 0 0 16px;
     font-size: 18px;
     font-weight: 700;
-    letter-spacing: .08em;
-    color: rgba(17, 24, 39, .56);
+    letter-spacing: 0.08em;
+    color: rgba(17, 24, 39, 0.56);
 }
 
 /* 課程分類按鈕 */
@@ -67,9 +67,9 @@ h1 {
 
     padding: 10px 20px;
     border-radius: 999px;
-    border: 1px solid rgba(129, 163, 146, .16);
+    border: 1px solid rgba(129, 163, 146, 0.16);
 
-    background: rgba(255, 255, 255, .72);
+    background: rgba(255, 255, 255, 0.72);
 
     display: flex;
     flex-direction: column;
@@ -78,15 +78,11 @@ h1 {
 
     gap: 4px;
 
-    box-shadow:
-        0 4px 12px rgba(15, 23, 42, .04),
-        inset 0 1px 0 rgba(255, 255, 255, .78);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.78);
 
-    transition:
-        transform .14s ease,
-        background-color .18s ease,
-        border-color .18s ease,
-        box-shadow .18s ease;
+    transition: transform 0.14s ease, background-color 0.18s ease,
+        border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .progressButtons p:first-of-type {
@@ -97,7 +93,7 @@ h1 {
 
     line-height: 1;
 
-    color: rgba(65, 88, 74, .88);
+    color: rgba(65, 88, 74, 0.88);
 }
 
 .progressButtons p:last-of-type {
@@ -108,15 +104,14 @@ h1 {
 
     line-height: 1.3;
 
-    color: rgba(65, 88, 74, .48);
+    color: rgba(65, 88, 74, 0.48);
 }
 
 .progressButtons:hover {
     transform: translateY(-1px);
-    background: rgba(255, 255, 255, .9);
-    box-shadow:
-        0 10px 22px rgba(15, 23, 42, .07),
-        0 0 0 1px rgba(180, 193, 212, .10);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.07),
+        0 0 0 1px rgba(180, 193, 212, 0.1);
 }
 
 .progressButtons:active {
@@ -124,22 +119,20 @@ h1 {
 }
 
 .progressButtons.highlight {
-    background: rgba(129, 163, 146, .22);
+    background: rgba(129, 163, 146, 0.22);
 
-    border-color: rgba(129, 163, 146, .42);
+    border-color: rgba(129, 163, 146, 0.42);
 
-    box-shadow:
-        0 10px 24px rgba(129, 163, 146, .10),
-        0 0 0 1px rgba(129, 163, 146, .12);
+    box-shadow: 0 10px 24px rgba(129, 163, 146, 0.1),
+        0 0 0 1px rgba(129, 163, 146, 0.12);
 }
 
 .progressButtons.highlight:hover {
-    background: rgba(129, 163, 146, .28);
-    border-color: rgba(129, 163, 146, .54);
+    background: rgba(129, 163, 146, 0.28);
+    border-color: rgba(129, 163, 146, 0.54);
 
-    box-shadow:
-        0 10px 24px rgba(129, 163, 146, .12),
-        0 0 0 1px rgba(129, 163, 146, .14);
+    box-shadow: 0 10px 24px rgba(129, 163, 146, 0.12),
+        0 0 0 1px rgba(129, 163, 146, 0.14);
 }
 
 .progressButtons.highlight p:first-of-type {
@@ -147,7 +140,7 @@ h1 {
 }
 
 .progressButtons.highlight p:last-of-type {
-    color: rgba(65, 88, 74, .62);
+    color: rgba(65, 88, 74, 0.62);
 }
 
 /* 等級分類 */
@@ -171,9 +164,9 @@ h1 {
     padding: 10px 20px;
 
     border-radius: 999px;
-    border: 1px solid rgba(180, 193, 212, .16);
+    border: 1px solid rgba(180, 193, 212, 0.16);
 
-    background: rgba(255, 255, 255, .72);
+    background: rgba(255, 255, 255, 0.72);
 
     display: flex;
     flex-direction: column;
@@ -182,15 +175,11 @@ h1 {
 
     gap: 4px;
 
-    box-shadow:
-        0 4px 12px rgba(15, 23, 42, .04),
-        inset 0 1px 0 rgba(255, 255, 255, .78);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.78);
 
-    transition:
-        transform .14s ease,
-        background-color .18s ease,
-        border-color .18s ease,
-        box-shadow .18s ease;
+    transition: transform 0.14s ease, background-color 0.18s ease,
+        border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
 /* 等級主文字 */
@@ -202,7 +191,7 @@ h1 {
 
     line-height: 1;
 
-    color: rgba(17, 24, 39, .90);
+    color: rgba(17, 24, 39, 0.9);
 }
 
 /* subword */
@@ -213,22 +202,21 @@ h1 {
     font-weight: 500;
 
     line-height: 1.3;
-    letter-spacing: .08em;
+    letter-spacing: 0.08em;
 
-    color: rgba(17, 24, 39, .46);
+    color: rgba(17, 24, 39, 0.46);
 }
 
 /* hover */
 .labelButtons:hover {
     transform: translateY(-1px);
 
-    background: rgba(255, 255, 255, .90);
+    background: rgba(255, 255, 255, 0.9);
 
-    border-color: rgba(180, 193, 212, .55);
+    border-color: rgba(180, 193, 212, 0.55);
 
-    box-shadow:
-        0 10px 22px rgba(15, 23, 42, .07),
-        0 0 0 1px rgba(180, 193, 212, .10);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.07),
+        0 0 0 1px rgba(180, 193, 212, 0.1);
 }
 
 /* active */
@@ -238,31 +226,29 @@ h1 {
 
 /* highlight */
 .labelButtons.highlight {
-    background: rgba(180, 193, 212, .24);
+    background: rgba(180, 193, 212, 0.24);
 
-    border-color: rgba(180, 193, 212, .48);
+    border-color: rgba(180, 193, 212, 0.48);
 
-    box-shadow:
-        0 10px 24px rgba(31, 42, 68, .08),
-        0 0 0 1px rgba(180, 193, 212, .12);
+    box-shadow: 0 10px 24px rgba(31, 42, 68, 0.08),
+        0 0 0 1px rgba(180, 193, 212, 0.12);
 }
 
 /* highlight hover */
 .labelButtons.highlight:hover {
-    background: rgba(180, 193, 212, .30);
+    background: rgba(180, 193, 212, 0.3);
 
-    border-color: rgba(180, 193, 212, .58);
+    border-color: rgba(180, 193, 212, 0.58);
 }
 
 /* highlight text */
 .labelButtons.highlight p:first-of-type {
-    color: rgba(17, 24, 39, .92);
+    color: rgba(17, 24, 39, 0.92);
 }
 
 .labelButtons.highlight p:last-of-type {
-    color: rgba(17, 24, 39, .58);
+    color: rgba(17, 24, 39, 0.58);
 }
-
 
 /* 課程卡片區塊 */
 .courseIntro {
@@ -301,7 +287,7 @@ h1 {
 
 .courseDesc {
     font-size: 16px;
-    color: rgba(17, 24, 39, .64);
+    color: rgba(17, 24, 39, 0.64);
     padding: 0 10px;
     line-height: 1.5;
     min-height: 72px;
@@ -314,15 +300,15 @@ h1 {
     text-align: center;
     padding: 60px 20px;
     border-radius: 18px;
-    background: rgba(255, 255, 255, .55);
-    border: 1px solid rgba(17, 24, 39, .08);
-    color: rgba(17, 24, 39, .72);
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    color: rgba(17, 24, 39, 0.72);
     font-size: 18px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, .04);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
 }
 
 
-/* RDW設計開始 */
+/* ======== 課程瀏覽分頁RWD設定 ======== */
 @media screen and (max-width: 1280px) {
     .courseDiv {
         width: min(880px, 92vw);
@@ -335,7 +321,6 @@ h1 {
         width: min(920px, 88vw);
     }
 
-
     .progressButtons p:first-of-type,
     .labelButtons p:first-of-type {
         font-size: 16px;
@@ -346,7 +331,6 @@ h1 {
         font-size: 12px;
     }
 }
-
 
 @media screen and (max-width: 1000px) {
     .labelDiv {
@@ -376,10 +360,14 @@ h1 {
 /* 900px 以下：3 欄改 2 欄 */
 @media screen and (max-width: 900px) {
     .courseDiv {
-        width: min(600px, 92vw);
-        grid-template-columns: repeat(2, 250px);
+        width: min(720px, 92vw);
+        grid-template-columns: repeat(2, minmax(0, 250px));
         column-gap: 40px;
         row-gap: 52px;
+    }
+
+    .courseCards {
+        width: 100%;
     }
 
     .labelDiv {
@@ -403,10 +391,159 @@ h1 {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .labelDiv {
+        width: min(680px, 92vw);
+        padding: 22px 22px 6px;
+        margin: 36px auto;
+    }
 
-@media screen and (max-width: 760px) {
+    .labelWord h1 {
+        font-size: 30px;
+    }
+
+    .labelWord p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .filterGroup {
+        margin-bottom: 26px;
+    }
+
+    .filterTitle {
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+
+    .progressGroup,
+    .levelGroup {
+        gap: 14px;
+    }
+
+    .progressButtons,
+    .labelButtons {
+        padding: 9px 15px;
+    }
+
     .courseDiv {
-        width: min(560px, 92vw);
+        width: min(680px, 92vw);
+        margin: 56px auto;
         column-gap: 28px;
+        row-gap: 44px;
+    }
+
+    .courseCards {
+        width: 100%;
+        min-height: 390px;
+    }
+
+    .courseImg {
+        height: 165px;
+    }
+
+    .courseCards .cardTitle {
+        font-size: 18px;
+        min-height: 50px;
+    }
+
+    .courseDesc {
+        font-size: 16px;
+        min-height: 68px;
+    }
+}
+
+/* 手機介面下，課程卡片改單張加水平卷軸呈現 */
+@media screen and (max-width: 480px) {
+
+    /* ===== 篩選標籤區 ===== */
+
+    .labelDiv {
+        width: 92%;
+        padding: 20px 16px 4px;
+        margin: 28px auto;
+        border-radius: 20px;
+    }
+
+    .labelWord h1 {
+        font-size: 28px;
+    }
+
+    .labelWord p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    #topLine {
+        margin-bottom: 18px;
+    }
+
+    .filterTitle {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    /* ===== 篩選按鈕 ===== */
+
+    .progressGroup,
+    .levelGroup {
+        gap: 10px;
+    }
+
+    .progressButtons,
+    .labelButtons {
+        padding: 8px 14px;
+    }
+
+    .progressButtons p:first-of-type,
+    .labelButtons p:first-of-type {
+        font-size: 15px;
+    }
+
+    .progressButtons p:last-of-type,
+    .labelButtons p:last-of-type {
+        font-size: 11px;
+    }
+
+    /* ===== 課程區 ===== */
+
+    .courseDiv {
+
+        width: 90%;
+
+        display: flex;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+
+        gap: 18px;
+
+        padding: 0 0 12px;
+
+        margin: 60px auto 0px;
+
+        justify-content: flex-start;
+    }
+
+    .courseCards {
+
+        width: 250px;
+        min-height: 380px;
+
+        flex-shrink: 0;
+        scroll-snap-align: center;
+    }
+
+    .courseImg {
+        height: 165px;
+    }
+
+    /* 無資料提示 */
+
+    .emptyState {
+        font-size: 16px;
+        padding: 40px 20px;
+        margin-inline: auto;
     }
 }
