@@ -44,6 +44,35 @@ userInfoBtn.addEventListener("click", () => {
     userDropdown.classList.toggle("show");
 })
 
+// avatar 互動對話文字
+const avatarWords = document.querySelector(".avatarWords");
+
+//互動文字庫
+const wordList = [
+    "哈囉，我是你的 Noctra 學習夥伴。在「學習歷程」裡，你可以查看學習紀錄與進度，幫助你掌握學習步調。",
+    "今天也很適合前進一點點。你可以從進行中的課程開始，慢慢累積自己的學習節奏。",
+    "每完成一堂課，都是一次小小的進步。記得看看你的課程進度和成就徽章喔。",
+    "不用急著一次完成所有內容。穩定回來學習，才是最重要的節奏。",
+    "你的學習歷程會記錄每一步努力。準備好時，就挑選一門喜歡的課開始吧。",
+    "如果不知道要從哪裡開始，可以先看看建議學習層級，再選擇適合自己的課程。"
+];
+
+// 隨機挑選互動訊息
+function getRandomWords() {
+    //取得隨機index，從文字庫中抓出對應文字
+    let randomIndex = Math.floor(Math.random() * wordList.length);
+    return wordList[randomIndex];
+}
+
+// 更新 avatar 說話內容
+function updateAvatarWords() {
+    avatarWords.textContent = getRandomWords();
+}
+
+// 進入頁面時先隨機挑一句，之後每 8 秒更換一次
+updateAvatarWords();
+setInterval(updateAvatarWords, 8000);
+
 
 // 個人基本學習資訊
 const recommendLevel = document.getElementById("recommendLevel"); //建議的學習層級
