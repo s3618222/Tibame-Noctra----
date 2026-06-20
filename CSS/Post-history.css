@@ -99,10 +99,7 @@
     box-shadow: 0 10px 24px rgba(36, 50, 71, 0.18);
     opacity: 0.88;
 
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease,
-        background-color 0.2s ease,
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease,
         box-shadow 0.2s ease;
 }
 
@@ -152,10 +149,7 @@
     overflow: visible;
     display: block;
 
-    transition:
-        filter 0.25s ease,
-        transform 0.25s ease,
-        opacity 0.25s ease;
+    transition: filter 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
 
     z-index: 998;
 }
@@ -225,7 +219,6 @@
     transform: translateX(-50%);
     z-index: 2;
 }
-
 
 /* 個人基本資訊區塊 */
 .personalLearningInfo {
@@ -297,7 +290,6 @@ h2 {
     font-size: 28px;
     color: #243247;
     letter-spacing: 1px;
-
 }
 
 .courseWrap {
@@ -319,7 +311,7 @@ h2 {
 
     border-radius: 20px;
     border: 1px solid rgba(49, 65, 88, 0.08);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .55);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
 }
 
 /* 進行中卡片區塊淺藍色背景 */
@@ -429,46 +421,41 @@ h2 {
     border-radius: 22px;
 }
 
-
 /* 課程卡片樣式設定 */
 .courseCards {
     display: block;
     text-decoration: none;
     color: inherit;
 
-
     cursor: pointer;
 
     width: clamp(210px, 22vw, 250px);
 
     min-height: clamp(320px, 32vw, 400px);
-    border: 1px solid rgba(17, 24, 39, .12);
+    border: 1px solid rgba(17, 24, 39, 0.12);
     border-radius: 10px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, .03);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.03);
     overflow: hidden;
 
-    background: rgba(255, 255, 255, .75);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(15px);
 
-    transition:
-        transform .18s ease,
-        box-shadow .22s ease,
-        border-color .22s ease,
-        background-color .22s ease;
+    transition: transform 0.18s ease, box-shadow 0.22s ease,
+        border-color 0.22s ease, background-color 0.22s ease;
 }
 
 .courseCards:hover {
     transform: translateY(-6px);
 
-    border-color: rgba(31, 42, 68, .30);
-    background: rgba(255, 255, 255, .88);
+    border-color: rgba(31, 42, 68, 0.3);
+    background: rgba(255, 255, 255, 0.88);
 
-    box-shadow: 0 22px 60px rgba(0, 0, 0, .12);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.12);
 }
 
 .courseCards:active {
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
 .courseImg {
@@ -479,7 +466,7 @@ h2 {
     height: 180px;
     object-fit: cover;
 
-    transition: transform .4s ease;
+    transition: transform 0.4s ease;
 }
 
 .courseCards:hover .courseImg {
@@ -502,7 +489,7 @@ h2 {
 
 .courseDesc {
     font-size: 16px;
-    color: rgba(17, 24, 39, .64);
+    color: rgba(17, 24, 39, 0.64);
     padding: 0 10px;
     line-height: 1.5;
     min-height: 72px;
@@ -517,13 +504,13 @@ h2 {
     font-style: normal;
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: .6px;
+    letter-spacing: 0.6px;
 
     padding: 6px 10px;
     border-radius: 999px;
 
-    background: rgba(31, 42, 68, .12);
-    color: rgba(17, 24, 39, .78);
+    background: rgba(31, 42, 68, 0.12);
+    color: rgba(17, 24, 39, 0.78);
 
     align-self: flex-start;
     margin-left: 10px;
@@ -548,7 +535,7 @@ h2 {
 
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: .4px;
+    letter-spacing: 0.4px;
     box-sizing: border-box;
 
     border: 1px solid transparent;
@@ -576,26 +563,26 @@ h2 {
     border-radius: 999px;
     overflow: hidden;
 
-    background: rgba(17, 24, 39, .08);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .04);
+    background: rgba(17, 24, 39, 0.08);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .courseProgressFill {
     height: 100%;
     border-radius: 999px;
-    transition: width .35s ease;
+    transition: width 0.35s ease;
 }
 
 /* 進行中進度條 */
 .courseProgressFill.inProgress {
     background: linear-gradient(90deg, #9fb0c8 0%, #b4c1d4 100%);
-    box-shadow: 0 0 10px rgba(180, 193, 212, .28);
+    box-shadow: 0 0 10px rgba(180, 193, 212, 0.28);
 }
 
 /* 已完成進度條 */
 .courseProgressFill.completed {
     background: linear-gradient(90deg, #8aa595 0%, #a7bdae 100%);
-    box-shadow: 0 0 10px rgba(138, 165, 149, .24);
+    box-shadow: 0 0 10px rgba(138, 165, 149, 0.24);
 }
 
 /* 學習成就區塊 */
@@ -691,14 +678,14 @@ h2 {
 #a1Wrap {
     border: 1px solid transparent;
     border-radius: 5px;
-    background-color: #728CB0;
+    background-color: #728cb0;
 }
 
 /* A2徽章 */
 #a2Wrap {
     border: 1px solid transparent;
     border-radius: 5px;
-    background-color: #FBECD7;
+    background-color: #fbecd7;
 }
 
 /* B1徽章 */
@@ -719,7 +706,7 @@ h2 {
 #c1Wrap {
     border: 1px solid transparent;
     border-radius: 5px;
-    background-color: #FFC966;
+    background-color: #ffc966;
 }
 
 /* C2徽章 */
@@ -729,8 +716,7 @@ h2 {
     background-color: #987b8e;
 }
 
-
-/* ===RWD設定=== */
+/* ============ 課程瀏覽分頁RWD設定 ============ */
 /* 寬度大於1280時：保留 avatar fixed 設定 */
 @media screen and (min-width: 1281px) {
     .progressAvatar {
@@ -745,7 +731,6 @@ h2 {
         bottom: 265px;
     }
 }
-
 
 /* 寬度小於1280時，avatar縮小 */
 @media screen and (max-width: 1280px) {
@@ -784,7 +769,7 @@ h2 {
 
     .avatarArea {
         width: var(--page-width);
-        margin: 60px auto 40px;
+        margin: 60px auto 0px;
 
         display: flex;
         justify-content: center;
@@ -826,7 +811,6 @@ h2 {
     }
 }
 
-
 /* 寬度低於960時 */
 @media screen and (max-width: 960px) {
     .badgesDiv {
@@ -840,5 +824,324 @@ h2 {
 
     #welcomeWrap .badgeImg {
         width: 130px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --page-width: min(680px, 85vw);
+    }
+
+    .hero-welcome {
+        height: 180px;
+    }
+
+    .hero-welcome h1 {
+        font-size: 30px;
+    }
+
+    .sub-words {
+        width: min(420px, 86vw);
+        bottom: -58px;
+        padding: 18px 20px;
+    }
+
+    .personalLearningInfo,
+    .ongoingCourse,
+    .completedCourse,
+    .achievements {
+        width: var(--page-width);
+    }
+
+    .personalLearningInfo {
+        margin: 90px auto 70px;
+    }
+
+    h2,
+    .ongoingCourse h2,
+    .completedCourse h2,
+    .achievements h2 {
+        font-size: 26px;
+        margin-bottom: 24px;
+    }
+
+    .infoDiv {
+        gap: 4px;
+        width: 100%;
+        padding: 28px 24px;
+    }
+
+    .personalLearningInfo p {
+        font-size: 18px;
+        line-height: 2.2;
+        text-align: center;
+    }
+
+    #recommendLevel,
+    #ownedCoins {
+        font-size: 20px;
+    }
+
+    /* 課程卡片區：平板開始就改成完整寬度橫向滑動 */
+    .courseWrap {
+        width: 100%;
+        padding: 20px 16px 14px;
+    }
+
+    .ongoingCourseCards,
+    .completedCourseCards {
+        gap: 24px;
+        margin: 0;
+    }
+
+    /* 建議加上父層限定，避免影響其他頁面的共用 courseCards */
+    .ongoingCourse .courseCards,
+    .completedCourse .courseCards {
+        flex: 0 0 250px;
+        width: 250px;
+    }
+
+    .noOngoingCourse img,
+    .noCompletedCourse img {
+        width: min(520px, 100%);
+    }
+
+    .noOngoingCourse p,
+    .noCompletedCourse p {
+        font-size: 20px;
+    }
+
+    /* 成就徽章區 */
+    .achievements {
+        margin: 40px auto 70px;
+    }
+
+    .badges {
+        width: 100%;
+        padding: 24px 20px 28px;
+        gap: 22px;
+    }
+
+    .badges h3 {
+        margin: 0 0 4px;
+        text-align: center;
+    }
+
+    /* 徽章成就改column呈現 */
+    .badgesDiv {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        padding: 22px 20px;
+        text-align: left;
+    }
+
+    .badgeWrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .badgeImg {
+        width: 150px;
+    }
+
+    #welcomeWrap .badgeImg {
+        width: 135px;
+    }
+
+    .badges h3 {
+        font-size: 22px;
+    }
+
+    .badgeInfo h4 {
+        margin: 4px 0 8px;
+        font-size: 20px;
+    }
+
+    .badgeInfo p {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.7;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    :root {
+        --page-width: min(420px, 90vw);
+    }
+
+    .hero-welcome {
+        height: 160px;
+    }
+
+    .hero-welcome h1 {
+        font-size: 28px;
+    }
+
+    .sub-words {
+        width: 86vw;
+        bottom: -64px;
+        padding: 16px 18px;
+        font-size: 16px;
+    }
+
+    .sub-title {
+        font-size: 18px;
+    }
+
+    .avatarArea {
+        width: var(--page-width);
+        margin: 76px auto 0;
+    }
+
+    .progressAvatar {
+        width: 260px;
+        height: 318px;
+    }
+
+    #avatar-progress {
+        width: 240px;
+    }
+
+    .avatar-toggle {
+        top: 385px;
+        left: 50%;
+        right: auto;
+        transform: translateX(105px) translateY(-40px);
+
+        width: 32px;
+        height: 32px;
+    }
+
+    .avatar-toggle:hover {
+        transform: translateX(105px) translateY(-42px) scale(1.04);
+    }
+
+    .avatarWords {
+        width: min(260px, 82vw);
+        bottom: calc(100% - 44px);
+    }
+
+    .avatarWords p {
+        font-size: 15px;
+    }
+
+    #progressHeadSlot {
+        width: 52px;
+        top: 64px;
+    }
+
+    #progressBodySlot {
+        width: 94px;
+        top: 110px;
+    }
+
+    #progressBottomSlot {
+        width: 135px;
+        bottom: 23px;
+    }
+
+    .personalLearningInfo {
+        margin: 36px auto 60px;
+    }
+
+    h2,
+    .ongoingCourse h2,
+    .completedCourse h2,
+    .achievements h2 {
+        font-size: 24px;
+        margin-bottom: 22px;
+    }
+
+    .infoDiv {
+        padding: 24px 18px;
+        border-radius: 22px;
+    }
+
+    .personalLearningInfo p {
+        font-size: 17px;
+        line-height: 2;
+    }
+
+    .coinsDiv {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .tokenImg {
+        width: 38px;
+    }
+
+    .ongoingCourse,
+    .completedCourse {
+        margin-bottom: 64px;
+    }
+
+    .courseWrap {
+        padding: 18px 14px 14px;
+        border-radius: 18px;
+    }
+
+    .ongoingCourse .courseCards,
+    .completedCourse .courseCards {
+        flex: 0 0 250px;
+        width: 250px;
+    }
+
+    .ongoingCourseCards,
+    .completedCourseCards {
+        gap: 18px;
+    }
+
+    .noOngoingCourse img,
+    .noCompletedCourse img {
+        border-radius: 18px;
+        margin-bottom: 20px;
+    }
+
+    .noOngoingCourse p,
+    .noCompletedCourse p {
+        font-size: 18px;
+    }
+
+    .courseLink {
+        font-size: 16px;
+    }
+
+    .achievements {
+        margin: 30px auto 60px;
+    }
+
+    .badges {
+        padding: 22px 16px 24px;
+        border-radius: 24px;
+    }
+
+    .badgesDiv {
+        padding: 20px 16px;
+        border-radius: 20px;
+    }
+
+    .badgeImg {
+        width: 135px;
+    }
+
+    #welcomeWrap .badgeImg {
+        width: 122px;
+    }
+
+    .badges h3 {
+        font-size: 20px;
+    }
+
+    .badgeInfo h4 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .badgeInfo p {
+        font-size: 16px;
+        line-height: 1.7;
     }
 }
