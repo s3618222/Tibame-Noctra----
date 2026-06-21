@@ -52,7 +52,6 @@ h1 {
     gap: 42px;
 }
 
-
 /* 課程影音區 */
 .classVideo {
     width: 56%;
@@ -60,11 +59,10 @@ h1 {
     box-sizing: border-box;
 
     background: #ffffff;
-    border: 1px solid rgba(31, 42, 68, 0.10);
+    border: 1px solid rgba(31, 42, 68, 0.1);
     border-radius: 28px;
 
-    box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 
     overflow: hidden;
 }
@@ -80,8 +78,7 @@ h1 {
 /* 答對練習題時的狀態顯示：去除邊框 */
 .classVideo.correct {
     border-color: rgba(129, 163, 146, 0.22);
-    box-shadow:
-        0 12px 32px rgba(129, 163, 146, 0.10),
+    box-shadow: 0 12px 32px rgba(129, 163, 146, 0.1),
         0 2px 10px rgba(15, 23, 42, 0.03);
 }
 
@@ -90,7 +87,6 @@ h1 {
     color: #6b7280;
     margin-top: 12px;
     line-height: 1.3;
-
 }
 
 .previewCoverImg {
@@ -101,8 +97,7 @@ h1 {
     border-radius: 20px;
     border: 1px solid rgba(31, 42, 68, 0.12);
 
-    box-shadow:
-        0 8px 20px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
 }
 
 /* 實際影片 js控制flex打開 */
@@ -144,7 +139,7 @@ h1 {
 
     color: #1f2a44;
     background: rgba(31, 42, 68, 0.07);
-    border: 1px solid rgba(31, 42, 68, 0.10);
+    border: 1px solid rgba(31, 42, 68, 0.1);
 }
 
 #testImg {
@@ -155,8 +150,7 @@ h1 {
     border-radius: 20px;
     border: 1px solid rgba(31, 42, 68, 0.12);
 
-    box-shadow:
-        0 8px 20px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
 }
 
 .question {
@@ -184,7 +178,7 @@ h1 {
     line-height: 1.7;
     color: #7a4d16;
 
-    background-color: #F3E7E3;
+    background-color: #f3e7e3;
     border: 1px solid rgba(180, 193, 212, 0.28);
 }
 
@@ -216,19 +210,18 @@ h1 {
     color: #243041;
     line-height: 1.6;
 
-    transition: background .18s ease, border-color .18s ease;
+    transition: background 0.18s ease, border-color 0.18s ease;
 }
 
 .options label:hover {
-    border-color: rgba(31, 42, 68, .25);
-    background: rgba(31, 42, 68, .04);
+    border-color: rgba(31, 42, 68, 0.25);
+    background: rgba(31, 42, 68, 0.04);
 }
 
 .options label:has(input[type="radio"]:checked) {
-    border-color: rgba(31, 42, 68, .45);
-    background: rgba(31, 42, 68, .08);
+    border-color: rgba(31, 42, 68, 0.45);
+    background: rgba(31, 42, 68, 0.08);
 }
-
 
 /* 開始課程or訂閱按紐 */
 #startClassBtn {
@@ -295,8 +288,7 @@ h1 {
     border: 1px solid rgba(24, 33, 49, 0.07);
     border-radius: 28px;
 
-    box-shadow:
-        0 14px 34px rgba(15, 23, 42, 0.06),
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06),
         inset 0 1px 0 rgba(255, 255, 255, 0.55);
 
     position: fixed;
@@ -315,12 +307,22 @@ h1 {
 }
 
 /* avatar設定 */
-.rewardAvatar {
+.avatarContainer {
     width: 400px;
     height: 350px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%) scale(var(--avatar-scale, 1));
+    transform-origin: top center;
+}
+
+.rewardAvatar {
+    width: min(400px, 82vw);
+    aspect-ratio: 400 / 350;
     position: relative;
     overflow: hidden;
-    display: block;
 }
 
 #avatar-reward {
@@ -390,7 +392,6 @@ h1 {
 }
 
 .purpose {
-
     margin-bottom: 36px;
     padding-bottom: 28px;
     border-bottom: 1px solid rgba(24, 33, 49, 0.08);
@@ -422,10 +423,9 @@ h1 {
     margin: 0;
     margin-bottom: 8px;
 
-
     font-size: 16px;
     font-weight: 700;
-    letter-spacing: .4px;
+    letter-spacing: 0.4px;
 
     background: rgba(129, 163, 146, 0.18);
     color: #41584a;
@@ -436,14 +436,13 @@ h1 {
     padding-top: 20px;
 }
 
-
 /* 其他課程卡片區 */
 .otherCoursesLink {
     width: min(1100px, 86vw);
     margin: 120px auto 90px;
     padding: 40px 0 10px;
 
-    border-top: 1px solid rgba(31, 42, 68, 0.10);
+    border-top: 1px solid rgba(31, 42, 68, 0.1);
 }
 
 .checkOtherCourses {
@@ -452,8 +451,6 @@ h1 {
     justify-content: space-between;
 }
 
-
-
 .other-title {
     font-size: 30px;
     font-weight: 700;
@@ -461,6 +458,17 @@ h1 {
     margin: 0;
     letter-spacing: -0.01em;
     color: #182131;
+}
+
+.continue-learning {
+    text-align: left;
+
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: rgba(31, 42, 68, 0.45);
+    margin-top: 8px;
 }
 
 .courseWrap {
@@ -498,7 +506,6 @@ h1 {
     padding: 0 18px;
 }
 
-
 /* 按鈕統一樣式 */
 #startClassBtn,
 #reWatchBtn,
@@ -509,7 +516,7 @@ h1 {
     min-width: 132px;
     padding: 11px 20px;
     border-radius: 999px;
-    border: 1px solid rgba(31, 42, 68, 0.10);
+    border: 1px solid rgba(31, 42, 68, 0.1);
 
     background: #1f2a44;
     color: #ffffff;
@@ -518,10 +525,8 @@ h1 {
     letter-spacing: 0.2px;
     cursor: pointer;
 
-    transition:
-        transform .18s ease,
-        box-shadow .18s ease,
-        background-color .18s ease;
+    transition: transform 0.18s ease, box-shadow 0.18s ease,
+        background-color 0.18s ease;
 }
 
 #checkAllBtn {
@@ -559,17 +564,20 @@ h1 {
 
     background: transparent;
     color: #1f2a44;
-    border: 1px solid rgba(31, 42, 68, .12);
+    border: 1px solid rgba(31, 42, 68, 0.12);
     box-shadow: none;
 }
 
 #checkAllBtn:hover {
-    background: rgba(31, 42, 68, .05);
+    background: rgba(31, 42, 68, 0.05);
     color: #1f2a44;
     box-shadow: none;
 }
 
-/* RWD設定 */
+
+
+
+/* ============ 課程獨立分頁RWD設定 ============ */
 @media screen and (max-width: 1180px) {
 
     .classWrap,
@@ -595,6 +603,7 @@ h1 {
     .classContent {
         flex-direction: column;
         margin-top: 48px;
+        gap: 40px;
     }
 
     .classVideo,
@@ -611,15 +620,362 @@ h1 {
         max-width: 760px;
         margin: 0 auto;
     }
+
+    .otherCoursesLink {
+        margin: 60px auto 60px;
+    }
+
+    .continue-learning {
+        font-size: 14px;
+    }
 }
 
-.continue-learning {
-    text-align: left;
+@media screen and (max-width: 768px) {
 
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    /* 獨立頁面主內容 */
+    .classWrap,
+    .otherCoursesLink {
+        width: min(720px, calc(100% - 36px));
+    }
 
-    color: rgba(31, 42, 68, .45);
-    margin-top: 8px;
+    .classWrap {
+        margin-top: 24px;
+    }
+
+    .classTitle {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 4px;
+        line-height: 1.25;
+    }
+
+    #sub-classTitle {
+        max-width: 620px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .classContent {
+        margin-top: 42px;
+        gap: 34px;
+    }
+
+    /* 影音主區：768 下維持單欄且放大觀看空間 */
+    .classVideo {
+        max-width: 720px;
+        padding: 14px;
+        border-radius: 24px;
+    }
+
+    .videoPlayer iframe {
+        border-radius: 16px;
+    }
+
+    .previewCoverImg,
+    #testImg {
+        width: min(100%, 620px);
+        border-radius: 18px;
+    }
+
+    .classTag {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    /* 課後測驗閱讀性 */
+    .postTest {
+        padding: 4px 0 2px;
+    }
+
+    .postTestLabel {
+        font-size: 17px;
+    }
+
+    .question {
+        width: 94%;
+        font-size: 18px;
+        line-height: 1.65;
+    }
+
+    .hint {
+        width: 94%;
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .options {
+        width: 94%;
+        margin: 28px auto 20px;
+        padding-left: 0;
+        font-size: 18px;
+        gap: 12px;
+    }
+
+    .options label {
+        width: 100%;
+        align-items: flex-start;
+        padding: 12px 14px;
+    }
+
+    .options input {
+        margin-top: 7px;
+        flex-shrink: 0;
+    }
+
+    /* 課程資訊區 */
+    .classInfo {
+        max-width: 720px;
+        padding: 0 4px;
+    }
+
+    .classInfo h2 {
+        font-size: 20px;
+    }
+
+    .classInfo p {
+        font-size: 18px;
+        line-height: 1.75;
+    }
+
+    /* 獎勵彈窗可縮放 */
+    .rewards {
+        width: min(400px, calc(100vw - 36px));
+        max-height: calc(100dvh - 36px);
+        overflow-y: auto;
+        border-radius: 24px;
+    }
+
+    .rewardTitle {
+        padding: 18px 22px 0;
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    /* 其他課程 */
+    .otherCoursesLink {
+        margin: 72px auto 64px;
+    }
+
+    .checkOtherCourses div {
+        flex-shrink: 1;
+    }
+
+    .checkOtherCourses #checkAllBtn {
+        flex-shrink: 0;
+    }
+
+    .other-title {
+        font-size: 28px;
+    }
+
+    .courseWrap {
+        padding: 18px 4px 22px;
+    }
+
+    /* 其他課程卡片維持固定寬度，不縮放 */
+    .courseCards {
+        width: 250px;
+        flex: 0 0 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .classWrap,
+    .otherCoursesLink {
+        width: min(100% - 24px, 440px);
+    }
+
+    .classWrap {
+        margin-top: 20px;
+    }
+
+    .levelTag {
+        font-size: 16px;
+        padding: 5px 11px;
+    }
+
+    h1 {
+        font-size: 24px;
+        line-height: 1.32;
+    }
+
+    #sub-classTitle {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .classContent {
+        margin-top: 32px;
+        gap: 30px;
+    }
+
+    /* 影音區：手機介面下，縮短內距，讓影片可視範圍大一點 */
+    .classVideo {
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .videoPlayer iframe {
+        border-radius: 14px;
+    }
+
+    .previewCoverImg,
+    #testImg {
+        border-radius: 16px;
+    }
+
+    .classTag {
+        font-size: 15px;
+        line-height: 1.55;
+        margin-top: 10px;
+    }
+
+    /* 按鈕：手機維持好點擊，但不要太巨大 */
+    #startClassBtn,
+    #reWatchBtn,
+    #postTestBtn,
+    #answerBtn {
+        width: 80%;
+        min-width: 0;
+        font-size: 18px;
+        padding: 10px 16px;
+    }
+
+    #postTestBtn {
+        margin-top: 16px;
+    }
+
+    /* 課後測驗 */
+    .postTestLabel {
+        font-size: 15px;
+        margin-bottom: 14px;
+    }
+
+    .question {
+        width: 100%;
+        margin: 18px auto;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .hint {
+        width: 100%;
+        font-size: 15px;
+        padding: 12px 14px;
+        line-height: 1.65;
+    }
+
+    .options {
+        width: 100%;
+        margin: 22px auto 18px;
+        font-size: 16px;
+        gap: 10px;
+    }
+
+    .options label {
+        padding: 12px;
+        border-radius: 13px;
+        line-height: 1.55;
+    }
+
+    .options input {
+        margin-top: 5px;
+    }
+
+    /* 課程資訊 */
+    .classInfo {
+        padding: 0 2px;
+    }
+
+    .classInfo h2 {
+        font-size: 18px;
+    }
+
+    .classInfo p {
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    .purpose {
+        margin-bottom: 30px;
+        padding-bottom: 24px;
+    }
+
+    /* 獎勵彈窗：手機版再縮小 */
+    .rewards {
+        width: calc(100vw - 28px);
+        max-height: calc(100dvh - 28px);
+        border-radius: 22px;
+    }
+
+    .rewardTitle {
+        font-size: 15px;
+        padding: 18px 18px 0;
+    }
+
+    .rewardAvatar {
+        width: 300px;
+    }
+
+    .avatarContainer {
+        --avatar-scale: 0.75;
+    }
+
+    .rewards {
+        overflow-x: visible;
+    }
+
+    #confirmBtn {
+        width: 50%;
+        min-width: 0;
+        font-size: 18px;
+        padding: 10px 16px;
+    }
+
+    /* 其他課程標題區 */
+    .otherCoursesLink {
+        margin: 48px auto 56px;
+        padding-top: 32px;
+    }
+
+    .checkOtherCourses {
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .other-title {
+        font-size: 24px;
+    }
+
+    .continue-learning {
+        font-size: 12px;
+        letter-spacing: 1.4px;
+        line-height: 1.4;
+    }
+
+    #checkAllBtn {
+        font-size: 16px;
+        padding: 8px 13px;
+    }
+
+    /* 其他課程橫向滑動 */
+    .courseWrap {
+        margin-top: 22px;
+        padding: 16px 2px 20px;
+    }
+
+    .courseTrack {
+        gap: 16px;
+    }
+
+    .courseCards {
+        width: 250px;
+        flex: 0 0 250px;
+    }
 }
